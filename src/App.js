@@ -3,22 +3,27 @@ import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section>
+			<div>
+				<div>
+					<h1>3C 電競年中戰</h1>
+					<ul className='tags'>
+						<li></li>
+					</ul>
+				</div>
+				<div className='spotlightImg'>
+					<img src="product" alt="" />
+				</div>
+			</div>
+			<div>
+				<div className='products'>
+					<ul>
+						<li>aaaaaa</li>
+					</ul>
+				</div>
+				<div className='pagination'></div>
+			</div>
+		</section>
   );
 }
 
