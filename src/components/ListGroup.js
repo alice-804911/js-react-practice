@@ -3,7 +3,7 @@ import ListItem from './ListItem';
 function ListGroup() {
 	return (
 		<div className="c-listGroup">
-			<ul className="c-listGroup_lists">
+			<ul className="c-listGroup__list">
 				<ListItem />
 				<ListItem />
 				<ListItem />
@@ -15,4 +15,4 @@ function ListGroup() {
 	)
 }
 
-export default ListGroup
+export default ListGroup;

@@ -16,7 +16,7 @@ function ThemeGroup() {
 						</ul>
 					</div>
 					<div className="c-themeGroup__banner">
-						<img src="#" alt="主打推薦Banner" />
+						<img src="https://picsum.photos/720/1192" alt="主打推薦Banner" />
 					</div>
 				</div>
 			</div>

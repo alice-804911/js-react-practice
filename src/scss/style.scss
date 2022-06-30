@@ -7,11 +7,13 @@ body {
 }
 .c-themeGroup {
 	display: flex;
-	height: auto;
+	height: 596px;
+	margin-top: 40px;
 	background: #fff;
 	border-radius: 8px;
 	filter: drop-shadow(0px 4px 0px rgba(43, 43, 43, 0.1));
 	&__left {
+		position: relative;
 		width: 600px;
 		background: #275E9D;
 		color: #fff;
@@ -43,11 +45,37 @@ body {
 	&__info {
 		display: flex;
 		flex-direction: column;
+		position: relative;
 		padding: 0 0 24px 24px;
+		z-index: 2;
 	}
 	&__title {
+		max-width: 280px;
 		font-size: 36px;
 		margin: 10px 0;
+	}
+	&__banner {
+		width: 360px;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		right: 0;
+		border-top-left-radius: 55px;
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+}
+.c-listGroup {
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 16px 0;
+	}
+	&__item {
+		width: calc((100% / 3) - 60px);
+		margin: 0 30px;
 	}
 }
 .o-keywords {
@@ -66,5 +94,14 @@ body {
 	&__img {
 	max-width: 152px;
 	max-height: 152px;
+	}
+	&__title {
+		font-size: 16px;
+		color: #000;
+		margin: 8px 0;
+		display: -webkit-box;
+  	-webkit-line-clamp: 2;
+  	-webkit-box-orient: vertical;  
+  	overflow: hidden;
 	}
 }
