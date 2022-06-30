@@ -1,8 +1,8 @@
-import ThemeGroup from "./ThemeGroup";
+import ThemeGroup from './ThemeGroup';
 
 function Content() {
 	return (
-		<div className="content">
+		<div className="c-content">
 			<ThemeGroup />
 			<ThemeGroup />
 		</div>

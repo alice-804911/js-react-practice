@@ -1,9 +1,9 @@
-import ListItem from "./ListItem"
+import ListItem from './ListItem';
 
 function ListGroup() {
 	return (
-		<div className='c-listGroup'>
-			<ul className='c-listGroup_lists'>
+		<div className="c-listGroup">
+			<ul className="c-listGroup_lists">
 				<ListItem />
 				<ListItem />
 				<ListItem />

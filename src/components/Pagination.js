@@ -1,6 +1,6 @@
 function Pagination() {
 	return (
-		<div className='c-pagination'>
+		<div className="c-pagination">
 			<div className="c-pagination__icon">
 				<span className="o-icon o-icon--arrowLeft"></span>
 			</div>
