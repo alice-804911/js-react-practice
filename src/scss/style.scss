@@ -78,7 +78,7 @@ body {
 		padding-top: 24px;
 	}
 	&__item {
-		width: calc((100% / 3) - 60px);
+		width: 152px;
 		margin: 0 30px 16px 30px;
 	}
 }
@@ -110,6 +110,9 @@ body {
   	-webkit-line-clamp: 2;
   	-webkit-box-orient: vertical;  
   	overflow: hidden;
+		&:hover {
+			color: #0090EB;
+		}
 	}
 	&__price {
 		font-size: 18px;

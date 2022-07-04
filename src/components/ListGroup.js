@@ -1,22 +1,16 @@
 import ListItem from './ListItem';
 
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5, 6];
 const listItems = numbers.map((number) =>
-  <li>{number}</li>
+	<ListItem value = {number} kay = {number.toString()} />
 );
 
 function ListGroup() {
 	return (
 		<div className="c-listGroup">
 			<ul className="c-listGroup__list">
-				<ListItem />
-				<ListItem />
-				<ListItem />
-				<ListItem />
-				<ListItem />
-				<ListItem />
+				{listItems}
 			</ul>
-			<ul>{listItems}</ul>
 		</div>
 	)
 }
