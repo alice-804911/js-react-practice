@@ -1,9 +1,8 @@
 import ListItem from './ListItem';
 
-const numbers = [1, 2, 3, 4, 5, 6];
-const listItems = numbers.map((number) =>
+const listItems = [...Array(6)].map((_, number) => (
 	<ListItem value = {number} kay = {number.toString()} />
-);
+));
 
 function ListGroup() {
 	return (
