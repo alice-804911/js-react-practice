@@ -59,8 +59,12 @@ body {
 		margin: 10px 0;
 	}
 	&__banner {
-		width: 360px;
+		display: flex;
+    align-items: center;
+    width: 360px;
+    height: 100%;
 		overflow: hidden;
+		background: #fff;
 		position: absolute;
 		top: 0;
 		right: 0;

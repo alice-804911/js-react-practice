@@ -19,9 +19,9 @@ function ThemeGroup() {
 	return (
 		<section className="c-themeGroup">
 			<div className="c-themeGroup__left">
-				<div className="c-themeGroup__tag">{dataLeftInfo.Link.Text2}</div>
+				<div className="c-themeGroup__tag">主題推薦</div>
 				<div className="c-themeGroup__info">
-					<h1 className="c-themeGroup__title">aaa</h1>
+					<h1 className="c-themeGroup__title">{dataLeftInfo.Link.Text2}</h1>
 					<ul className="o-keywords">
 						<KeywordsTag />
 						<KeywordsTag />
@@ -29,7 +29,7 @@ function ThemeGroup() {
 					</ul>
 				</div>
 				<div className="c-themeGroup__banner">
-					<img src="" alt="主打推薦Banner" />
+					<img src={dataLeftInfo.Img.Src} alt="主打推薦Banner" />
 				</div>
 			</div>
 			<div className="c-themeGroup__right">
