@@ -1,19 +1,7 @@
 import Pagination from './Pagination';
 import ListGroup from './ListGroup';
 import KeywordsTag from './KeywordsTag';
-
-const dataLeftInfo = {
-	Id: 1,
-	Link: {
-		Text: "真該死",
-		Text2: "好棒棒",
-		Background: "#FF0000"
-	},
-	Img: {
-		Src: "https://fs-a.ecimg.tw/img/h24/v1/layout/onsale/20220704/20220630160437_welcome-2-B-1000x1000.jpg",
-		Text: "test",
-	},
-}
+import { dataLeft } from '../data';
 
 function ThemeGroup() {
 	return (
@@ -21,7 +9,7 @@ function ThemeGroup() {
 			<div className="c-themeGroup__left">
 				<div className="c-themeGroup__tag">主題推薦</div>
 				<div className="c-themeGroup__info">
-					<h1 className="c-themeGroup__title">{dataLeftInfo.Link.Text2}</h1>
+					<h1 className="c-themeGroup__title">{dataLeft.Link.Text2}</h1>
 					<ul className="o-keywords">
 						<KeywordsTag />
 						<KeywordsTag />
@@ -29,7 +17,7 @@ function ThemeGroup() {
 					</ul>
 				</div>
 				<div className="c-themeGroup__banner">
-					<img src={dataLeftInfo.Img.Src} alt="主打推薦Banner" />
+					<img src={dataLeft.Img.Src} alt="主打推薦Banner" />
 				</div>
 			</div>
 			<div className="c-themeGroup__right">

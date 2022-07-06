@@ -1,11 +1,9 @@
-const keyword = {
-	'name': '曜越電競椅'
-}
+import { dataKeytag } from '../data';
 
 function KeywordsTag() {
 	return (
 		<li className="o-keywords__tag">
-			<a href="http://" alt="tags">#{keyword.name}</a>
+			<a href="http://" alt="tags">#{dataKeytag.name}</a>
 		</li>
 	)
 }
