@@ -311,7 +311,7 @@ function Content() {
 	return (
 		<div className="c-content">
 			<ThemeGroup dataGroup={data} />
-			<ThemeGroup />
+			<ThemeGroup dataGroup={data} />
 		</div>
 	)
 }
