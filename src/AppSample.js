@@ -1,5 +1,6 @@
-import Content from './components/Content';
-import './App.scss';
+
+import './App.css';
+import ThemeRecommend from './components/ThemeRecommend';
 
 const data = [
   {
@@ -306,11 +307,10 @@ const data = [
     },
   },
 ];
-
 function App() {
-	console.log(data);
+  console.log(data);
   return (
-    <Content prodList={data} />
+    <ThemeRecommend prodList={data}/>
   );
 }
 

@@ -82,8 +82,8 @@ const dataRight = [
 	{
 		Id: 8,
 		Link: {
-			Text: "【日本風倍清】織物除菌消臭噴霧120ml (高效除菌)",
-			Text1: "179",
+			Text: "【日本風倍清】",
+			Text1: "800",
 			Url: "DAAK90-A900AD51J",
 		},
 		Img: {
