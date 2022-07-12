@@ -1,11 +1,20 @@
-import { dataKeytag } from '../data';
+// import { dataKeytag } from '../data';
+// import { useState, useEffect } from 'react';
 
-function KeywordsTag() {
-	return (
-		<li className="o-keywords__tag">
-			<a href="http://" alt="tags">#{dataKeytag.name}</a>
-		</li>
-	)
-}
+// function KeywordsTag({ dataGroup }) {
+// 	const [secondList, setSecondList] = useState({Link: { Text: '', Url: '' }});
+// 	useEffect(() => {
+// 		dataGroup.forEach((item) => {
+// 			if (item.Id >= 2 && item.Id <= 6) {
+// 				setSecondList({ ...item })
+// 			}
+// 		})
+// 	});
+// 	return (
+// 		<li className="o-keywords__tag">
+// 			<a href="http://" alt="tags">#{secondList.Link.Text}</a>
+// 		</li>
+// 	)
+// }
 
-export default KeywordsTag;
+// export default KeywordsTag;
