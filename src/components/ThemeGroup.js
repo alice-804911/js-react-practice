@@ -7,7 +7,7 @@ import renderSwitchTypeUrl from '../utils';
 const ThemeGroup = ({ dataGroup }) => {
 
 	const [firstInfo, setFirstInfo] = useState({Link:{Text:'', Text2:'', Background:''},Img:{Src:'', Text:''}});
-	const [secondList, setSecondList] = useState({Link:{Text:'', Url:''}, ExtraData:{ElementType:''}});
+	const [secondList, setSecondList] = useState([2]);
 	// const [thirdList, setThirdList] = useState([]);
 	useEffect(() => {
 		dataGroup.forEach((item) => {
@@ -15,7 +15,7 @@ const ThemeGroup = ({ dataGroup }) => {
 				setFirstInfo({ ...item })
 			} 
 			if (item.Id >= 2 && item.Id <= 6) {
-				setSecondList({ ...item })
+				setSecondList((prev)=>[...prev,item])
 			} 
 		//  if (item.Id >= 7 && item.Id <= 24) {
 		// 		setThirdList({ ...item })
@@ -32,8 +32,8 @@ const ThemeGroup = ({ dataGroup }) => {
 					<h1 className="c-themeGroup__title">{firstInfo.Link.Text2}</h1>
 					<ul className="o-keywords">
 						{secondList.map((item) => (
-							<li className="o-keywords__tag">
-								<a href={secondList.ExtraData.ElementType === 'Search' ? '' : renderSwitchTypeUrl(secondList.ExtraData.ElementType)}>#{secondList.Link.Text}</a>
+							<li className="o-keywords__tag" key={item.Id}>
+								<a href={secondList?.ExtraData?.ElementType === 'Search' ? '' : renderSwitchTypeUrl(secondList?.ExtraData?.ElementType?.Url)}>#{secondList?.Link?.Text}</a>
 							</li>
 						))}
 					</ul>
