@@ -3,7 +3,7 @@ import ThemeGroup from './ThemeGroup';
 const data = [
   {
     Id: 1,
-    Link: { Text: "真該死", Text2: "好棒棒", Background: "#FF0000" },
+    Link: { Text: "真該死", Text2: "好棒棒", Background: "#275E9D" },
     Img: {
       Src: "https://fs-a.ecimg.tw/img/h24/v1/layout/onsale/20220704/20220630160437_welcome-2-B-1000x1000.jpg",
       Text: "test",
@@ -16,7 +16,7 @@ const data = [
   },
   {
     Id: 3,
-    Link: { Text: "好壞壞", Url: "https://shopping.pchome.com.tw/" },
+    Link: { Text: "好壞壞", Url: "https://24h.pchome.com.tw/" },
     ExtraData: { ElementType: "Url" },
   },
   {

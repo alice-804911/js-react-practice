@@ -7,9 +7,12 @@ import renderSwitchTypeUrl from '../utils';
 const ThemeGroup = ({ dataGroup }) => {
 
 	const [firstInfo, setFirstInfo] = useState({Link:{Text:'', Text2:'', Background:''},Img:{Src:'', Text:''}});
-	const [secondList, setSecondList] = useState([2]);
+	const [secondList, setSecondList] = useState([]);
 	// const [thirdList, setThirdList] = useState([]);
+	
+	// const [count,setCount] = useState(1);
 	useEffect(() => {
+
 		dataGroup.forEach((item) => {
 			if (item.Id === 1) {
 				setFirstInfo({ ...item })
@@ -21,19 +24,28 @@ const ThemeGroup = ({ dataGroup }) => {
 		// 		setThirdList({ ...item })
 		// }
 		})
+		// console.log(count)
 	}, [dataGroup]);
+	console.log(secondList);
 	
+// const b={url:123,name:666};
+// Object.keys(b).map((item)=>{
+
+// })
+
+const b = true;
+console.log(b?'ok':"no");
 
 	return (
 		<section className="c-themeGroup">
-			<div className="c-themeGroup__left">
+			<div className="c-themeGroup__left" style={{backgroundColor:firstInfo.Link.Background}}>
 				<div className="c-themeGroup__tag">主題推薦</div>
 				<div className="c-themeGroup__info">
 					<h1 className="c-themeGroup__title">{firstInfo.Link.Text2}</h1>
 					<ul className="o-keywords">
 						{secondList.map((item) => (
 							<li className="o-keywords__tag" key={item.Id}>
-								<a href={secondList?.ExtraData?.ElementType === 'Search' ? '' : renderSwitchTypeUrl(secondList?.ExtraData?.ElementType?.Url)}>#{secondList?.Link?.Text}</a>
+								<a href={item.ExtraData.ElementType === 'Url' ? item.Link.Url : renderSwitchTypeUrl(item.ExtraData.ElementType)}>#{item.Link.Text}</a>
 							</li>
 						))}
 					</ul>

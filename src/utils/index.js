@@ -5,9 +5,7 @@ const renderSwitchTypeUrl = (key) => {
 		case 'Store':
 			return '';
 		case 'Search':
-			return 'https://ecshweb.pchome.com.tw/search/v3.3/?q=';
-		case 'Url':
-			return '';
+			return 'https://shopping.pchome.com.tw/';
 		default:
 			return '';
 	}
