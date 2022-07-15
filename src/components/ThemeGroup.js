@@ -8,7 +8,6 @@ const ThemeGroup = ({ dataGroup }) => {
 
 	const [firstInfo, setFirstInfo] = useState({Link:{Text:'', Text2:'', Background:''},Img:{Src:'', Text:''}});
 	const [secondList, setSecondList] = useState([]);
-	// const [thirdList, setThirdList] = useState([]);
 	
 	// const [count,setCount] = useState(1);
 	useEffect(() => {
@@ -18,11 +17,8 @@ const ThemeGroup = ({ dataGroup }) => {
 				setFirstInfo({ ...item })
 			} 
 			if (item.Id >= 2 && item.Id <= 6) {
-				setSecondList((prev)=>[...prev,item])
+				setSecondList((prev) => [...prev,item])
 			} 
-		//  if (item.Id >= 7 && item.Id <= 24) {
-		// 		setThirdList({ ...item })
-		// }
 		})
 		// console.log(count)
 	}, [dataGroup]);

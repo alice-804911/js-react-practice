@@ -1,15 +1,14 @@
 import ListItem from './ListItem';
+import { data } from '../data';
 
-const listItems = [...Array(6)].map((_, number) => (
-	<ListItem value = {number} kay = {number.toString()} />
-));
+// const listItems = [...Array(6)].map((_, number) => (
+// 	<ListItem value = {number} kay = {number.toString()} />
+// ));
 
 function ListGroup() {
 	return (
 		<div className="c-listGroup">
-			<ul className="c-listGroup__list">
-				{listItems}
-			</ul>
+			<ListItem dataGroupRight={data} />
 		</div>
 	)
 }
