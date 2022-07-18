@@ -66,7 +66,7 @@ const data = [
     Id: 9,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧90ml (高效除菌)",
-      Text1: "179",
+      Text1: "20,000",
       Url: "DAAK90-A900AD51J",
     },
     Img: {
@@ -81,7 +81,7 @@ const data = [
     Id: 10,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧80ml (高效除菌)",
-      Text1: "179",
+      Text1: "60",
       Url: "DAAK90-A900AD51J",
     },
     Img: {
@@ -96,7 +96,7 @@ const data = [
     Id: 11,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧400ml (高效除菌)",
-      Text1: "179",
+      Text1: "3555",
       Url: "DAAK90-A900AD51J",
     },
     Img: {
@@ -111,8 +111,8 @@ const data = [
     Id: 12,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧770ml (高效除菌)",
-      Text1: "179",
-      Url: "DAAK90-A900AD51J",
+      Text1: "2000",
+      Url: "DAAK90-A712BD51J",
     },
     Img: {
       Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
@@ -126,7 +126,7 @@ const data = [
     Id: 13,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧800ml (高效除菌)",
-      Text1: "179",
+      Text1: "300",
       Url: "DAAK90-A900AD51J",
     },
     Img: {
@@ -141,7 +141,7 @@ const data = [
     Id: 14,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧900ml (高效除菌)",
-      Text1: "179",
+      Text1: "88",
       Url: "DAAK90-A900AD51J",
     },
     Img: {
@@ -156,7 +156,7 @@ const data = [
     Id: 15,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧1000ml (高效除菌)",
-      Text1: "179",
+      Text1: "1000",
       Url: "DAAK90-A900AD51J",
     },
     Img: {
@@ -171,7 +171,7 @@ const data = [
     Id: 16,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧440ml (高效除菌)",
-      Text1: "179",
+      Text1: "789",
       Url: "DAAK90-A900AD51J",
     },
     Img: {
@@ -186,7 +186,7 @@ const data = [
     Id: 17,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧6880ml (高效除菌)",
-      Text1: "179",
+      Text1: "34",
       Url: "DAAK90-A900AD51J",
     },
     Img: {
@@ -201,7 +201,7 @@ const data = [
     Id: 18,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧9840ml (高效除菌)",
-      Text1: "179",
+      Text1: "9000",
       Url: "https://www.pchomeec.tw/activity/AC29412758",
     },
     Img: {
@@ -216,7 +216,7 @@ const data = [
     Id: 19,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧330ml (高效除菌)",
-      Text1: "179",
+      Text1: "4667",
       Url: "DAAK90-A900AD51J",
     },
     Img: {
@@ -231,7 +231,7 @@ const data = [
     Id: 20,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧470ml (高效除菌)",
-      Text1: "179",
+      Text1: "247",
       Url: "DAAK90-A900AD51J",
     },
     Img: {
@@ -246,7 +246,7 @@ const data = [
     Id: 21,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧380ml (高效除菌)",
-      Text1: "179",
+      Text1: "888",
       Url: "DAAK90-A900AD51J",
     },
     Img: {
@@ -261,7 +261,7 @@ const data = [
     Id: 22,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧300ml (高效除菌)",
-      Text1: "179",
+      Text1: "4578",
       Url: "DAAK90-A900AD51J",
     },
     Img: {
@@ -276,7 +276,7 @@ const data = [
     Id: 23,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧900ml (高效除菌)",
-      Text1: "179",
+      Text1: "256",
       Url: "DAAK90-A900AD51J",
     },
     Img: {
@@ -291,7 +291,7 @@ const data = [
     Id: 24,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧3900ml (高效除菌)",
-      Text1: "179",
+      Text1: "1791",
       Url: "DAAK90-A900AD51J",
     },
     Img: {
