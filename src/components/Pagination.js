@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-
-
 function Pagination() {
 	const [page, setPage] = useState(1);
 	return (

@@ -2,14 +2,12 @@ import { useState, useEffect } from 'react';
 import Pagination from './Pagination';
 import ListGroup from './ListGroup';
 import renderSwitchTypeUrl from '../utils';
-// import KeywordsTag from './KeywordsTag';
 
 const ThemeGroup = ({ dataGroup }) => {
 
 	const [firstInfo, setFirstInfo] = useState({Link:{Text:'', Text2:'', Background:''},Img:{Src:'', Text:''}});
 	const [secondList, setSecondList] = useState([]);
 	
-	// const [count,setCount] = useState(1);
 	useEffect(() => {
 
 		dataGroup.forEach((item) => {
@@ -20,14 +18,8 @@ const ThemeGroup = ({ dataGroup }) => {
 				setSecondList((prev) => [...prev,item])
 			} 
 		})
-		// console.log(count)
 	}, [dataGroup]);
 	console.log(secondList);
-	
-// const b={url:123,name:666};
-// Object.keys(b).map((item)=>{
-
-// })
 
 const b = true;
 console.log(b?'ok':"no");
