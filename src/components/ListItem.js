@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import renderSwitchTypeUrl from '../utils';
-
+const nnn = decodeURI('\u96fb');
+	console.log(nnn);
 function ListItem({ dataGroupRight }) {
 	const [thirdList, setThirdList] = useState([]);
 	useEffect(() => {
@@ -10,6 +11,7 @@ function ListItem({ dataGroupRight }) {
 			}
 		})
 	}, [dataGroupRight]);
+	
 	return (
 		<ul className="c-listGroup__list">
 			{thirdList.map((item) => (
