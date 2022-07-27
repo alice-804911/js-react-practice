@@ -78,7 +78,8 @@ body {
 .c-listGroup {
 	overflow: hidden;
 	&__list {
-		width: 1920px;
+		// width: 1920px;
+		height: 509px;
 		display: flex;
 		flex-wrap: wrap;
 		padding-top: 24px;

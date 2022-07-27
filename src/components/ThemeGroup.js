@@ -5,7 +5,7 @@ import renderSwitchTypeUrl from '../utils';
 
 const ThemeGroup = ({ dataGroup }) => {
 
-	const [firstInfo, setFirstInfo] = useState({Link:{Text:'', Text2:'', Background:''},Img:{Src:'', Text:''}});
+	const [firstInfo, setFirstInfo] = useState({Link:{Text:'', Title:'', Background:''},Img:{Src:'', Text:''}});
 	const [secondList, setSecondList] = useState([]);
 	
 	useEffect(() => {
@@ -29,7 +29,7 @@ console.log(b?'ok':"no");
 			<div className="c-themeGroup__left" style={{backgroundColor:firstInfo.Link.Background}}>
 				<div className="c-themeGroup__tag">主題推薦</div>
 				<div className="c-themeGroup__info">
-					<h1 className="c-themeGroup__title">{firstInfo.Link.Text2}</h1>
+					<h1 className="c-themeGroup__title">{firstInfo.Link.Title}</h1>
 					<ul className="o-keywords">
 						{secondList.map((item) => (
 							<li className="o-keywords__tag" key={item.Id}>

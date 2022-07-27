@@ -19,7 +19,7 @@ function ListItem({ dataGroupRight }) {
 						<a href={item.ExtraData.ElementType === 'Url' ? item.Link.Url : renderSwitchTypeUrl(item.ExtraData.ElementType)} alt="prodlink">
 							<img src={`https://cs-a.ecimg.tw` + item.Img.Src} alt="商品圖" className="o-productInfo__img" />
 							<h3 className="o-productInfo__title">{item.Link.Text}</h3>
-							<div className="o-productInfo__price">${item.Link.Text1}</div>
+							<div className="o-productInfo__price">${item.Link.price}</div>
 						</a>
 					</div>
 				</li>

@@ -1,7 +1,7 @@
 const data = [
   {
     Id: 1,
-    Link: { Text: "\u82b1\u65d7\u9280\u884c\u9801\u7c64", Text2: "\u60c5\u4eba\u7bc0\u9001\u79ae\u63a8\u85a6\u2661 \u5168\u583447\u6298\u8d77", Background: "#00d4ff" },
+    Link: { Text: "\u82b1\u65d7\u9280\u884c\u9801\u7c64", Title: "\u60c5\u4eba\u7bc0\u9001\u79ae\u63a8\u85a6\u2661 \u5168\u583447\u6298\u8d77", Background: "#00d4ff" },
     Img: {
       Src: "https://fs-a.ecimg.tw/img/h24/v2/layout/index/20220721134802_62d8e73482e47_720x1192.jpg?text=%E9%AB%98%E6%BA%AB%E8%AD%A6%E5%A0%B1_1",
       Text: "\u82b1\u65d7\u9280\u884cLOGO",
@@ -36,7 +36,7 @@ const data = [
     Id: 7,
     Link: {
       Text: "Nintendo Switch\u300a\u904b\u52d5\u300b\u4e2d\u6587\u7248",
-      Text1: "179",
+      price: "179",
       Url: "DGBJBH-1900F0T7P",
     },
     Img: {
@@ -51,7 +51,7 @@ const data = [
     Id: 8,
     Link: {
       Text: "Fitbit Versa 3 \u667a\u6167\u624b\u9336",
-      Text1: "179",
+      price: "179",
       Url: "DEAQDO-A900B7NFL",
     },
     Img: {
@@ -66,7 +66,7 @@ const data = [
     Id: 9,
     Link: {
       Text: "富士通Fujitsu《冷暖型-高級系列》變頻分離式空調 ASCG050KGTA/AOCG050KGTA",
-      Text1: "20,000",
+      price: "20,000",
       Url: "DPAFEX-1900F926K",
     },
     Img: {
@@ -81,7 +81,7 @@ const data = [
     Id: 10,
     Link: {
       Text: "Panasonic國際牌 雙科技無邊框玻璃610公升四門冰箱NR-D611XGS-N 翡翠金",
-      Text1: "60",
+      price: "60",
       Url: "DPAC1T-A900AVR5T",
     },
     Img: {
@@ -96,7 +96,7 @@ const data = [
     Id: 11,
     Link: {
       Text: "GEORGIA喬亞 滴濾無糖黑咖啡 350ml(24入/箱)",
-      Text1: "3555",
+      price: "3555",
       Url: "DBABE2-A900B3IQN",
     },
     Img: {
@@ -111,7 +111,7 @@ const data = [
     Id: 12,
     Link: {
       Text: "ANESSA 安耐曬 金鑽防曬組2204(金鑽高效防曬露N 4X版 60ml+12mL)",
-      Text1: "2000",
+      price: "2000",
       Url: "DDCE0H-A900F5I76",
     },
     Img: {
@@ -126,7 +126,7 @@ const data = [
     Id: 13,
     Link: {
       Text: "義美小泡芙享樂夾鏈包(香草牛奶＋特濃巧克力）",
-      Text1: "300",
+      price: "300",
       Url: "DBACD4-A900C3LYX",
     },
     Img: {
@@ -141,7 +141,7 @@ const data = [
     Id: 14,
     Link: {
       Text: "萬歲牌蔓越莓核桃(130g)",
-      Text1: "88",
+      price: "88",
       Url: "DBACJ7-A900B63U7",
     },
     Img: {
@@ -156,7 +156,7 @@ const data = [
     Id: 15,
     Link: {
       Text: "HP 15s-fq2008TU 星幻粉(i5-1135 G7/8GB/512GB PCIe/W11/FHD/15.6)",
-      Text1: "1000",
+      price: "1000",
       Url: "DHAG4S-1900EUIF3",
     },
     Img: {
@@ -171,7 +171,7 @@ const data = [
     Id: 16,
     Link: {
       Text: "【Dior 迪奧】Miss Dior花漾迪奧淡香水 50ml",
-      Text1: "789",
+      price: "789",
       Url: "DDAH1S-A900EX38Z",
     },
     Img: {
@@ -186,7 +186,7 @@ const data = [
     Id: 17,
     Link: {
       Text: "星賀和牛A4+日本和牛嫩肩(板腱)牛排200g±5%",
-      Text1: "34",
+      price: "34",
       Url: "DBCP03-A900F1L7Q",
     },
     Img: {
@@ -201,7 +201,7 @@ const data = [
     Id: 18,
     Link: {
       Text: "【日本風倍清】織物除菌消臭噴霧9840ml (高效除菌)",
-      Text1: "9000",
+      price: "9000",
       Url: "https://www.pchomeec.tw/activity/AC29412758",
     },
     Img: {
@@ -216,7 +216,7 @@ const data = [
     Id: 19,
     Link: {
       Text: "PChome生鮮 - 金鑽鳳梨：1顆(1.5kg ±10%) 鄰家鮮生嚴選",
-      Text1: "4667",
+      price: "4667",
       Url: "DBDM00-A900BROCE",
     },
     Img: {
@@ -231,7 +231,7 @@ const data = [
     Id: 20,
     Link: {
       Text: "PChome生鮮 - 奇異果：6顆(500g ±10%) 鄰家鮮生嚴選",
-      Text1: "247",
+      price: "247",
       Url: "DBDM00-A900BROC3",
     },
     Img: {
@@ -246,7 +246,7 @@ const data = [
     Id: 21,
     Link: {
       Text: "TECO東元 14吋微電腦遙控DC節能電風扇 XA1406BRD",
-      Text1: "888",
+      price: "888",
       Url: "DMAB31-A900DYOZ8",
     },
     Img: {
@@ -261,7 +261,7 @@ const data = [
     Id: 22,
     Link: {
       Text: "CORSAIR VIRTUOSO RGB無線耳機SE咖啡棕",
-      Text1: "4578",
+      price: "4578",
       Url: "DCAY4D-A900C4GWG",
     },
     Img: {
@@ -276,7 +276,7 @@ const data = [
     Id: 23,
     Link: {
       Text: "【OOHA】荔枝乳酸氣泡飲+【OOHA】水蜜桃烏龍茶氣泡飲+【OOHA】柚子海鹽氣泡飲(330mlx24入/箱),共三箱",
-      Text1: "256",
+      price: "256",
       Url: "DBABHA-1900F9C12",
     },
     Img: {
@@ -291,7 +291,7 @@ const data = [
     Id: 24,
     Link: {
       Text: "【DOVE 多芬】滋養沐浴乳 舒敏溫和 1Lx6 送冷水壺1.5L",
-      Text1: "1791",
+      price: "1791",
       Url: "DAAJCD-A900C0Z55",
     },
     Img: {
