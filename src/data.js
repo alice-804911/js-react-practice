@@ -1,46 +1,46 @@
 const data = [
   {
     Id: 1,
-    Link: { Text: "真該死", Text2: "好棒棒", Background: "#275E9D" },
+    Link: { Text: "\u82b1\u65d7\u9280\u884c\u9801\u7c64", Text2: "\u60c5\u4eba\u7bc0\u9001\u79ae\u63a8\u85a6\u2661 \u5168\u583447\u6298\u8d77", Background: "#00d4ff" },
     Img: {
-      Src: "https://fs-a.ecimg.tw/img/h24/v1/layout/onsale/20220704/20220630160437_welcome-2-B-1000x1000.jpg",
-      Text: "test",
+      Src: "https://fs-a.ecimg.tw/img/h24/v2/layout/index/20220721134802_62d8e73482e47_720x1192.jpg?text=%E9%AB%98%E6%BA%AB%E8%AD%A6%E5%A0%B1_1",
+      Text: "\u82b1\u65d7\u9280\u884cLOGO",
     },
   },
   {
     Id: 2,
-    Link: { Text: "test", Url: "test" },
+    Link: { Text: "\u82b1\u65d7\u9280\u884c", Url: "\u9023\u7d50\u81f3 \u82b1\u65d7\u9280\u884c \u7684\u641c\u5c0b\u7d50\u679c" },
     ExtraData: { ElementType: "Search" },
   },
   {
     Id: 3,
-    Link: { Text: "好壞壞", Url: "https://24h.pchome.com.tw/" },
+    Link: { Text: "Citibank Taiwan ", Url: "https://www.citibank.com.tw" },
     ExtraData: { ElementType: "Url" },
   },
   {
     Id: 4,
-    Link: { Text: "好爛", Url: "https://shopping.pchome.com.tw/" },
+    Link: { Text: "airpods", Url: "https://shopping.pchome.com.tw/" },
     ExtraData: { ElementType: "Search" },
   },
   {
     Id: 5,
-    Link: { Text: "為什麼", Url: "https://shopping.pchome.com.tw/" },
+    Link: { Text: "homepod mini", Url: "https://shopping.pchome.com.tw/" },
     ExtraData: { ElementType: "Search" },
   },
   {
     Id: 6,
-    Link: { Text: "好煩", Url: "https://shopping.pchome.com.tw/" },
+    Link: { Text: "", Url: "https://shopping.pchome.com.tw/" },
     ExtraData: { ElementType: "Search" },
   },
   {
     Id: 7,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧100ml (高效除菌)",
+      Text: "Nintendo Switch\u300a\u904b\u52d5\u300b\u4e2d\u6587\u7248",
       Text1: "179",
-      Url: "DAAK90-A900AD51J",
+      Url: "DGBJBH-1900F0T7P",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DGBJBH1900F0T7P/000007_1652249825.jpg",
     },
     ExtraData: {
       ElementType: "Prod",
@@ -50,12 +50,12 @@ const data = [
   {
     Id: 8,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧120ml (高效除菌)",
+      Text: "Fitbit Versa 3 \u667a\u6167\u624b\u9336",
       Text1: "179",
-      Url: "DAAK90-A900AD51J",
+      Url: "DEAQDO-A900B7NFL",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DEAQDOA900B7NFL/000007_1616652517.jpg",
     },
     ExtraData: {
       ElementType: "Prod",
@@ -65,12 +65,12 @@ const data = [
   {
     Id: 9,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧90ml (高效除菌)",
+      Text: "富士通Fujitsu《冷暖型-高級系列》變頻分離式空調 ASCG050KGTA/AOCG050KGTA",
       Text1: "20,000",
-      Url: "DAAK90-A900AD51J",
+      Url: "DPAFEX-1900F926K",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DPAFEX1900F926K/000007_1656829638.jpg",
     },
     ExtraData: {
       ElementType: "Store",
@@ -80,12 +80,12 @@ const data = [
   {
     Id: 10,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧80ml (高效除菌)",
+      Text: "Panasonic國際牌 雙科技無邊框玻璃610公升四門冰箱NR-D611XGS-N 翡翠金",
       Text1: "60",
-      Url: "DAAK90-A900AD51J",
+      Url: "DPAC1T-A900AVR5T",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DPAC1TA900AVR5T/000007_1618576580.jpg",
     },
     ExtraData: {
       ElementType: "Prod",
@@ -95,12 +95,12 @@ const data = [
   {
     Id: 11,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧400ml (高效除菌)",
+      Text: "GEORGIA喬亞 滴濾無糖黑咖啡 350ml(24入/箱)",
       Text1: "3555",
-      Url: "DAAK90-A900AD51J",
+      Url: "DBABE2-A900B3IQN",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DBABE2A900B3IQN/000007_1615968539.jpg",
     },
     ExtraData: {
       ElementType: "Prod",
@@ -110,12 +110,12 @@ const data = [
   {
     Id: 12,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧770ml (高效除菌)",
+      Text: "ANESSA 安耐曬 金鑽防曬組2204(金鑽高效防曬露N 4X版 60ml+12mL)",
       Text1: "2000",
-      Url: "DAAK90-A712BD51J",
+      Url: "DDCE0H-A900F5I76",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DDCE0HA900F5I76/000007_1654574381.jpg",
     },
     ExtraData: {
       ElementType: "Prod",
@@ -125,12 +125,12 @@ const data = [
   {
     Id: 13,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧800ml (高效除菌)",
+      Text: "義美小泡芙享樂夾鏈包(香草牛奶＋特濃巧克力）",
       Text1: "300",
-      Url: "DAAK90-A900AD51J",
+      Url: "DBACD4-A900C3LYX",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DBACD4A900C3LYX/000007_1639711687.jpg",
     },
     ExtraData: {
       ElementType: "Prod",
@@ -140,12 +140,12 @@ const data = [
   {
     Id: 14,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧900ml (高效除菌)",
+      Text: "萬歲牌蔓越莓核桃(130g)",
       Text1: "88",
-      Url: "DAAK90-A900AD51J",
+      Url: "DBACJ7-A900B63U7",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DBACJ7A900B63U7/000007_1617786470.jpg",
     },
     ExtraData: {
       ElementType: "Prod",
@@ -155,12 +155,12 @@ const data = [
   {
     Id: 15,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧1000ml (高效除菌)",
+      Text: "HP 15s-fq2008TU 星幻粉(i5-1135 G7/8GB/512GB PCIe/W11/FHD/15.6)",
       Text1: "1000",
-      Url: "DAAK90-A900AD51J",
+      Url: "DHAG4S-1900EUIF3",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DHAG4S1900EUIF3/000007_1649643321.jpg",
     },
     ExtraData: {
       ElementType: "Prod",
@@ -170,12 +170,12 @@ const data = [
   {
     Id: 16,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧440ml (高效除菌)",
+      Text: "【Dior 迪奧】Miss Dior花漾迪奧淡香水 50ml",
       Text1: "789",
-      Url: "DAAK90-A900AD51J",
+      Url: "DDAH1S-A900EX38Z",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DDAH1SA900EX38Z/000007_1650277642.jpg",
     },
     ExtraData: {
       ElementType: "Prod",
@@ -185,12 +185,12 @@ const data = [
   {
     Id: 17,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧6880ml (高效除菌)",
+      Text: "星賀和牛A4+日本和牛嫩肩(板腱)牛排200g±5%",
       Text1: "34",
-      Url: "DAAK90-A900AD51J",
+      Url: "DBCP03-A900F1L7Q",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DBCP03A900F1L7Q/000007_1657264452.jpg",
     },
     ExtraData: {
       ElementType: "Prod",
@@ -215,12 +215,12 @@ const data = [
   {
     Id: 19,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧330ml (高效除菌)",
+      Text: "PChome生鮮 - 金鑽鳳梨：1顆(1.5kg ±10%) 鄰家鮮生嚴選",
       Text1: "4667",
-      Url: "DAAK90-A900AD51J",
+      Url: "DBDM00-A900BROCE",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DBDM00A900BROCE/000007_1631541891.jpg",
     },
     ExtraData: {
       ElementType: "Prod",
@@ -230,12 +230,12 @@ const data = [
   {
     Id: 20,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧470ml (高效除菌)",
+      Text: "PChome生鮮 - 奇異果：6顆(500g ±10%) 鄰家鮮生嚴選",
       Text1: "247",
-      Url: "DAAK90-A900AD51J",
+      Url: "DBDM00-A900BROC3",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DBDM00A900BROC3/000007_1631540606.jpg",
     },
     ExtraData: {
       ElementType: "Search",
@@ -245,12 +245,12 @@ const data = [
   {
     Id: 21,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧380ml (高效除菌)",
+      Text: "TECO東元 14吋微電腦遙控DC節能電風扇 XA1406BRD",
       Text1: "888",
-      Url: "DAAK90-A900AD51J",
+      Url: "DMAB31-A900DYOZ8",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DMAB31A900DYOZ8/000007_1644380207.jpg",
     },
     ExtraData: {
       ElementType: "Prod",
@@ -260,12 +260,12 @@ const data = [
   {
     Id: 22,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧300ml (高效除菌)",
+      Text: "CORSAIR VIRTUOSO RGB無線耳機SE咖啡棕",
       Text1: "4578",
-      Url: "DAAK90-A900AD51J",
+      Url: "DCAY4D-A900C4GWG",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DCAY4DA900C4GWG/000007_1640317548.jpg",
     },
     ExtraData: {
       ElementType: "Store",
@@ -275,12 +275,12 @@ const data = [
   {
     Id: 23,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧900ml (高效除菌)",
+      Text: "【OOHA】荔枝乳酸氣泡飲+【OOHA】水蜜桃烏龍茶氣泡飲+【OOHA】柚子海鹽氣泡飲(330mlx24入/箱),共三箱",
       Text1: "256",
-      Url: "DAAK90-A900AD51J",
+      Url: "DBABHA-1900F9C12",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DBABHA1900F9C12/000007_1657017710.jpg",
     },
     ExtraData: {
       ElementType: "Prod",
@@ -290,12 +290,12 @@ const data = [
   {
     Id: 24,
     Link: {
-      Text: "【日本風倍清】織物除菌消臭噴霧3900ml (高效除菌)",
+      Text: "【DOVE 多芬】滋養沐浴乳 舒敏溫和 1Lx6 送冷水壺1.5L",
       Text1: "1791",
-      Url: "DAAK90-A900AD51J",
+      Url: "DAAJCD-A900C0Z55",
     },
     Img: {
-      Src: "/items/DAAK90A900AD51J/000007_1629189763.jpg",
+      Src: "/items/DAAJCDA900C0Z55/000007_1637751615.jpg",
     },
     ExtraData: {
       ElementType: "Store",
