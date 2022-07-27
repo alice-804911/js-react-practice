@@ -16,7 +16,7 @@ function ListItem({ dataGroupRight }) {
 			{thirdList.map((item) => (
 				<li className="c-listGroup__item">
 					<div className="o-productInfo">
-						<a href={item.ExtraData.ElementType === 'Url' ? item.Link.Url : renderSwitchTypeUrl(item.ExtraData.ElementType)} alt="prodlink">
+						<a href={item.ExtraData.ElementType === 'Url' ? item.Link.Url : renderSwitchTypeUrl(item.ExtraData.ElementType) + item.Link.Url} alt="prodlink">
 							<img src={`https://cs-a.ecimg.tw` + item.Img.Src} alt="商品圖" className="o-productInfo__img" />
 							<h3 className="o-productInfo__title">{item.Link.Text}</h3>
 							<div className="o-productInfo__price">${item.Link.price}</div>
