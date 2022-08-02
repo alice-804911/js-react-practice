@@ -22,7 +22,7 @@ const ThemeGroup = ({ dataGroup }) => {
 			}
 		})
 	}, [dataGroup]);
-	console.log(secondList);
+	console.log(thirdList);
 
 
 	return (
