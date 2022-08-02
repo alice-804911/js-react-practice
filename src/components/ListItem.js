@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 import renderSwitchTypeUrl from '../utils';
 
-function ListItem({ dataGroupRight }) {
+function ListItem({ dataGroup }) {
 	const [thirdList, setThirdList] = useState([]);
 	useEffect(() => {
-		dataGroupRight.forEach((item) => {
+		dataGroup.forEach((item) => {
 			if (item.Id >= 7 && item.Id <= 24) {
 				setThirdList((prev) => [...prev, item])
 			}
 		})
-	}, [dataGroupRight]);
+	}, [dataGroup]);
 	
 	return (
 		<ul className="c-listGroup__list">
