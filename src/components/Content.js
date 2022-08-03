@@ -3,7 +3,6 @@ import { data } from '../data';
 
 
 function Content() {
-	console.log(data);
 	return (
 		<div className="c-content">
 			<ThemeGroup dataGroup={data} />
