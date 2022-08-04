@@ -10,7 +10,7 @@ const ThemeGroup = ({ dataGroup }) => {
 	const [page, setPage] = useState(1);
 	// 設定每次頁面切換數量
 	const THIRDLIST_PER_PAGE = 6;
-	// 總頁數
+	// 計算總頁數
 	const PAGETOTAL = thirdGroupItems.length / THIRDLIST_PER_PAGE;
 	useEffect(() => {
 		dataGroup.forEach(item => {
