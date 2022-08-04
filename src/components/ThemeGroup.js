@@ -3,14 +3,13 @@ import renderSwitchTypeUrl from '../utils';
 
 const ThemeGroup = ({ dataGroup }) => {
 console.log(dataGroup);
-	// const [firstInfo, setFirstInfo] = useState({Link:{Text:'', Title:'', Background:''},Img:{Src:'', Text:''}});
 	const [firstInfo, setFirstInfo] = useState({Link:{Text:'', Title:'', Background:''},Img:{Src:'', Text:''}});
 	const [secondList, setSecondList] = useState([]);
 	const [thirdList, setThirdList] = useState([]);
 	const [thirdGroupItems, setThirdGroupItems] = useState([]);
 	const [page, setPage] = useState(1);
 	// 設定每次頁面切換數量
-	const thirdListPerPage = 6;
+	const THIRDLIST_PER_PAGE = 6;
 
 	useEffect(() => {
 		dataGroup.forEach(item => {
@@ -26,10 +25,10 @@ console.log(dataGroup);
 	}, [dataGroup]);
 
 	useEffect(() => {
-		// page 起始點 : 頁數減掉 1 再 * 每頁的數量(thirdListPerPage = 6)
-		const startIndex = (page - 1) * thirdListPerPage
+		// page 起始點 : 頁數減掉 1 再 * 每頁的數量(THIRDLIST_PER_PAGE = 6)
+		const startIndex = (page - 1) * THIRDLIST_PER_PAGE
 		// thirdGroupItems所有24 items做分割，從起始點startIndex開始加上每頁顯示items數量
-		setThirdList(thirdGroupItems.slice(startIndex, startIndex + thirdListPerPage))
+		setThirdList(thirdGroupItems.slice(startIndex, startIndex + THIRDLIST_PER_PAGE))
 	}, [thirdGroupItems, page]);
 
 	return (
