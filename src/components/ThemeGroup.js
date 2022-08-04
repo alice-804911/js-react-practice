@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import renderSwitchTypeUrl from '../utils';
 
 const ThemeGroup = ({ dataGroup }) => {
-console.log(dataGroup);
+
 	const [firstInfo, setFirstInfo] = useState({Link:{Text:'', Title:'', Background:''},Img:{Src:'', Text:''}});
 	const [secondList, setSecondList] = useState([]);
 	const [thirdList, setThirdList] = useState([]);
@@ -10,7 +10,8 @@ console.log(dataGroup);
 	const [page, setPage] = useState(1);
 	// 設定每次頁面切換數量
 	const THIRDLIST_PER_PAGE = 6;
-
+	// 總頁數
+	const PAGETOTAL = thirdGroupItems.length / THIRDLIST_PER_PAGE;
 	useEffect(() => {
 		dataGroup.forEach(item => {
 			if (item.Id === 1) {
@@ -69,7 +70,7 @@ console.log(dataGroup);
 					<div className="c-pagination__icon" onClick={() => setPage(page < 2 ? page : page - 1)}>
 						<span className="o-icon o-icon__arrow o-icon__arrow--left"></span>
 					</div>
-					<div className="c-pagination__pages"><a href="http://" className="c-pagination__pages--active">{page}</a> / <a href="http://">3</a></div>
+					<div className="c-pagination__pages"><a href="http://" className="c-pagination__pages--active">{page}</a> / <a href="http://">{PAGETOTAL}</a></div>
 					<div className="c-pagination__icon" onClick={() => setPage(page > 2 ? page : page + 1)}>
 						<span className="o-icon o-icon__arrow o-icon__arrow--right"></span>
 					</div>

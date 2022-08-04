@@ -1,6 +1,8 @@
 import ThemeGroup from './ThemeGroup';
 import { data } from '../data';
 
+const axios = require('axios').default;
+axios.get('/index/stage/v1/data&27655702')
 
 function Content() {
 	return (
