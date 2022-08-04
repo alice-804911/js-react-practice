@@ -5,8 +5,8 @@ import { data } from '../data';
 function Content() {
 	return (
 		<div className="c-content">
-			<ThemeGroup dataGroup={data} />
-			<ThemeGroup dataGroup={data} />
+			<ThemeGroup dataGroup={data.window1.Blocks[0].Nodes} />
+			<ThemeGroup dataGroup={data.window1.Blocks[0].Nodes} />
 		</div>
 	)
 }
