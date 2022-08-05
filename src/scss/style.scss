@@ -16,8 +16,10 @@ body {
 		position: relative;
 		width: 600px;
 		height: 100%;
-		background: #275E9D;
+		background: none;
 		color: #fff;
+		border-top-left-radius: 8px;
+		border-bottom-left-radius: 8px;
 	}
 	&__right {
 		width: 640px;
