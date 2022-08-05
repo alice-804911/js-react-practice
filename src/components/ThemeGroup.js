@@ -70,7 +70,9 @@ const ThemeGroup = ({ dataGroup }) => {
 					<div className="c-pagination__icon" onClick={() => setPage(page < 2 ? page : page - 1)}>
 						<span className="o-icon o-icon__arrow o-icon__arrow--left"></span>
 					</div>
-					<div className="c-pagination__pages"><a href="http://" className="c-pagination__pages--active">{page}</a> / <a href="http://">{PAGETOTAL}</a></div>
+					<div className="c-pagination__pages">
+						<a href="http://" className="c-pagination__pages--active">{page}</a> / <a href="http://">{PAGETOTAL}</a>
+					</div>
 					<div className="c-pagination__icon" onClick={() => setPage(page > 2 ? page : page + 1)}>
 						<span className="o-icon o-icon__arrow o-icon__arrow--right"></span>
 					</div>
