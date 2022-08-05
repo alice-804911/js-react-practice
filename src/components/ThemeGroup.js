@@ -3,7 +3,7 @@ import renderSwitchTypeUrl from '../utils';
 
 const ThemeGroup = ({ dataGroup }) => {
 
-	const [firstInfo, setFirstInfo] = useState({Link:{Text:'', Title:'', Background:''},Img:{Src:'', Text:''}});
+	const [firstInfo, setFirstInfo] = useState({Link:{Text:'', Text2:'', Background:''},Img:{Src:'', Text:''}});
 	const [secondList, setSecondList] = useState([]);
 	const [thirdList, setThirdList] = useState([]);
 	const [thirdGroupItems, setThirdGroupItems] = useState([]);
@@ -37,7 +37,7 @@ const ThemeGroup = ({ dataGroup }) => {
 			<div className="c-themeGroup__left" style={{backgroundColor:firstInfo.Link.Background}}>
 				<div className="c-themeGroup__tag">主題推薦</div>
 				<div className="c-themeGroup__info">
-					<h1 className="c-themeGroup__title">{firstInfo.Link.Title}</h1>
+					<h1 className="c-themeGroup__title">{firstInfo.Link.Text2}</h1>
 					<ul className="o-keywords">
 						{secondList.map((item) => (
 							<li className="o-keywords__tag" key={item.Id}>
@@ -47,7 +47,7 @@ const ThemeGroup = ({ dataGroup }) => {
 					</ul>
 				</div>
 				<div className="c-themeGroup__banner">
-					<img src={firstInfo.Img.Src} alt="主打推薦Banner" />
+					<img src={`https://fs-a.ecimg.tw` + firstInfo.Img.Src} alt="主打推薦Banner" />
 				</div>
 			</div>
 			<div className="c-themeGroup__right">
@@ -59,7 +59,7 @@ const ThemeGroup = ({ dataGroup }) => {
 									<a href={item.ExtraData.ElementType === 'Url' ? item.Link.Url : renderSwitchTypeUrl(item.ExtraData.ElementType) + item.Link.Url} alt="prodlink">
 										<img src={`https://cs-a.ecimg.tw` + item.Img.Src} alt="商品圖" className="o-productInfo__img" />
 										<h3 className="o-productInfo__title">{item.Link.Text}</h3>
-										<div className="o-productInfo__price">${item.Link.price}</div>
+										<div className="o-productInfo__price">${item.Link.Text1}</div>
 									</a>
 								</div>
 							</li>
