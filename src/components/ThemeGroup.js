@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import renderSwitchTypeUrl from '../utils';
 
 const ThemeGroup = ({ dataGroup }) => {
@@ -81,4 +82,23 @@ const ThemeGroup = ({ dataGroup }) => {
 		</section>
 	)
 }
+
+ThemeGroup.propTypes = {
+	Id: PropTypes.number,
+	// .shape特定形式對象
+	Link: PropTypes.shape ({
+		Url: PropTypes.string,
+		Text: PropTypes.string,
+		Text1: PropTypes.string,
+	}),
+	Img: PropTypes.shape ({
+		Src: PropTypes.string,
+	}),
+	ExtraData: PropTypes.shape ({
+		ElementType: PropTypes.string,
+		Sort: PropTypes.number,
+	})
+};
+
+
 export default ThemeGroup;

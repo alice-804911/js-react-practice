@@ -13,17 +13,16 @@ function Content() {
 
 	const getAllDatas = () => {
 		axios.get('/index/stage/v1/data&27655702')
-			.then(function (response) {
+			.then(response => {
 				// handle sucess
 				const allDatas = response.data.window2.Blocks[3].Nodes;
 				setDataGroup(allDatas);
-				console.log(response.data);
 			})
-			.catch(function (error) {
+			.catch(error => {
 				// handle error
 				console.log(error);
 			})
-			.then(function () {
+			.then(() => {
 				// always executed
 			});
 	}
