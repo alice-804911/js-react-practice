@@ -6,7 +6,6 @@ const axios = require('axios').default;
 // 抓取線上資料
 function Content() {
 	const [dataGroup, setDataGroup] = useState([]);
-
 	useEffect(() => {
 		getAllDatas();
 	}, []);

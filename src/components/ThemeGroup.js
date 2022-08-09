@@ -84,20 +84,25 @@ const ThemeGroup = ({ dataGroup }) => {
 }
 
 ThemeGroup.propTypes = {
-	Id: PropTypes.number,
-	// .shape特定形式對象
-	Link: PropTypes.shape ({
-		Url: PropTypes.string,
-		Text: PropTypes.string,
-		Text1: PropTypes.string,
-	}),
-	Img: PropTypes.shape ({
-		Src: PropTypes.string,
-	}),
-	ExtraData: PropTypes.shape ({
-		ElementType: PropTypes.string,
-		Sort: PropTypes.number,
-	})
+	dataGroup: PropTypes.arrayOf(
+		// .shape特定形式對象
+		PropTypes.shape({
+			ExtraData: PropTypes.shape({
+				ElementType: PropTypes.string,
+				Sort: PropTypes.number
+			}),
+			Id: PropTypes.number,
+			Img: PropTypes.shape({
+				Src: PropTypes.string,
+			}),
+			Link: PropTypes.shape({
+				Text: PropTypes.string,
+				Text1: PropTypes.string,
+				Url: PropTypes.string,
+				Background: PropTypes.string
+			})
+		})
+	)
 };
 
 
