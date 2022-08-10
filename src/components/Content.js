@@ -5,6 +5,8 @@ import axios from 'axios';
 // 抓取線上資料
 function Content() {
 	const [dataGroup, setDataGroup] = useState([]);
+	const [section, setSection] = useState([]);
+
 	useEffect(() => {
 		getAllDatas();
 	}, []);
@@ -13,8 +15,11 @@ function Content() {
 		axios.get('/index/stage/v1/data&27655702')
 			.then(response => {
 				// handle sucess
+				// console.log(response.data)
 				const allDatas = response.data.window2.Blocks[3].Nodes;
 				setDataGroup(allDatas);
+				const sectionData = response.data.window2.Blocks;
+				setSection(sectionData);
 			})
 			.catch(error => {
 				// handle error
@@ -27,8 +32,8 @@ function Content() {
 
 	return (
 		<div className="c-content">
-			<ThemeGroup dataGroup={dataGroup} />
-			<ThemeGroup dataGroup={dataGroup} />
+			<ThemeGroup dataGroup={dataGroup} section={section} />
+			<ThemeGroup dataGroup={dataGroup} section={section}/>
 		</div>
 	)
 }

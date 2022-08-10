@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import renderSwitchTypeUrl from '../utils';
 
-const ThemeGroup = ({ dataGroup }) => {
-
+const ThemeGroup = ({dataGroup,section}) => {
 	const [firstInfo, setFirstInfo] = useState({Link:{Text:'', Text2:'', Background:''},Img:{Src:'', Text:''}});
 	const [secondList, setSecondList] = useState([]);
 	const [thirdList, setThirdList] = useState([]);
 	const [thirdGroupItems, setThirdGroupItems] = useState([]);
+	const [sectionTab, setSectionTab] = useState([]);
 	const [page, setPage] = useState(1);
+	console.log(section)
 	// 設定每次頁面切換數量
 	const THIRDLIST_PER_PAGE = 6;
 	// 計算總頁數
@@ -25,7 +26,9 @@ const ThemeGroup = ({ dataGroup }) => {
 		// 過濾item : 大於或等於Id 7之後的items列入setsetThirdGroupItems，也就是Id 7 ~ Id 24
 		setThirdGroupItems(dataGroup.filter(item => item.Id >= 7))
 	}, [dataGroup]);
-
+	useEffect(() => {
+		setSectionTab(section.forEach(item => item.BlockId))
+	}, [section])
 	useEffect(() => {
 		// page 起始點 : 頁數減掉 1 再 * 每頁的數量(THIRDLIST_PER_PAGE = 6)
 		const startIndex = (page - 1) * THIRDLIST_PER_PAGE
@@ -45,7 +48,7 @@ const ThemeGroup = ({ dataGroup }) => {
 				<div className="c-themeGroup__info">
 					<h1 className="c-themeGroup__title">{firstInfo.Link.Text2}</h1>
 					<ul className="o-keywords">
-						{secondList.map((item) => (
+						{secondList.map(item => (
 							<li className="o-keywords__tag" key={item.Id}>
 								<a href={item.ExtraData.ElementType === 'Url' ? item.Link.Url : renderSwitchTypeUrl(item.ExtraData.ElementType)}>#{item.Link.Text}</a>
 							</li>
