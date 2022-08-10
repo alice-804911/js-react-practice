@@ -1,8 +1,7 @@
 import ThemeGroup from './ThemeGroup';
-// import { data } from '../data';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const axios = require('axios').default;
 // 抓取線上資料
 function Content() {
 	const [dataGroup, setDataGroup] = useState([]);

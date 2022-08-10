@@ -35,6 +35,11 @@ const ThemeGroup = ({ dataGroup }) => {
 
 	return (
 		<section className="c-themeGroup">
+			<div className="c-themeGroup__tabs">
+				<ul className="c-themeGroup__tabsList">
+					<li><button type="button" className="c-themeGroup__tabsListTab is_active">中元普渡</button></li>
+				</ul>
+			</div>
 			<div className="c-themeGroup__left" style={{backgroundColor:firstInfo.Link.Background}}>
 				<div className="c-themeGroup__tag">主題推薦</div>
 				<div className="c-themeGroup__info">
