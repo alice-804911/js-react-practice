@@ -26,9 +26,15 @@ const ThemeGroup = ({dataGroup,section}) => {
 		// 過濾item : 大於或等於Id 7之後的items列入setsetThirdGroupItems，也就是Id 7 ~ Id 24
 		setThirdGroupItems(dataGroup.filter(item => item.Id >= 7))
 	}, [dataGroup]);
+		// section
 	useEffect(() => {
-		setSectionTab(section.forEach(item => item.BlockId))
-	}, [section])
+		section.forEach(items => {
+			if (items.BlockId === 5){
+				setSectionTab((prev) => [...prev,items])
+			}
+		})
+	}, [section]);
+
 	useEffect(() => {
 		// page 起始點 : 頁數減掉 1 再 * 每頁的數量(THIRDLIST_PER_PAGE = 6)
 		const startIndex = (page - 1) * THIRDLIST_PER_PAGE
@@ -40,7 +46,7 @@ const ThemeGroup = ({dataGroup,section}) => {
 		<section className="c-themeGroup">
 			<div className="c-themeGroup__tabs">
 				<ul className="c-themeGroup__tabsList">
-					{sectionTab.map(item =>(<li><button type="button" className="c-themeGroup__tabsListTab is_active">{item.Nodes.Id}</button></li>))}
+					{sectionTab.map(items =>(<li><button type="button" className="c-themeGroup__tabsListTab is_active">{items.Nodes.Link.Text}</button></li>))}
 				</ul>
 			</div>
 			<div className="c-themeGroup__left" style={{backgroundColor:firstInfo.Link.Background}}>
