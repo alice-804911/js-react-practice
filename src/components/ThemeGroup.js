@@ -3,36 +3,38 @@ import PropTypes from 'prop-types';
 import renderSwitchTypeUrl from '../utils';
 
 const ThemeGroup = ({dataGroup,section}) => {
-	const [firstInfo, setFirstInfo] = useState({Link:{Text:'', Text2:'', Background:''},Img:{Src:'', Text:''}});
+	const [firstInfo, setFirstInfo] = useState(
+		{Link:{Text:'', Text2:'', Background:''},Img:{Src:'', Text:''}}
+		);
 	const [secondList, setSecondList] = useState([]);
 	const [thirdList, setThirdList] = useState([]);
 	const [thirdGroupItems, setThirdGroupItems] = useState([]);
 	const [sectionTab, setSectionTab] = useState([]);
 	const [page, setPage] = useState(1);
-	console.log(section)
 	// 設定每次頁面切換數量
 	const THIRDLIST_PER_PAGE = 6;
 	// 計算總頁數
 	const PAGETOTAL = thirdGroupItems.length / THIRDLIST_PER_PAGE;
 	useEffect(() => {
 		dataGroup.forEach(item => {
-			if (item.Id === 1) {
+			if (item.BlockId === 5 && item.Nodes[0].Id === 1) {
 				setFirstInfo({ ...item })
 			} 
-			if (item.Id >= 2 && item.Id <= 6) {
+			if (item.BlockId === 1 && item.Nodes.Id >= 2 && item.Nodes.Id <= 6) {
 				setSecondList((prev) => [...prev,item])
 			}
 		})
 		// 過濾item : 大於或等於Id 7之後的items列入setsetThirdGroupItems，也就是Id 7 ~ Id 24
 		setThirdGroupItems(dataGroup.filter(item => item.Id >= 7))
 	}, [dataGroup]);
-		// section
+		// sectionTab
 	useEffect(() => {
 		section.forEach(items => {
-			if (items.BlockId === 5){
+			if (items.BlockId <= 5){
 				setSectionTab((prev) => [...prev,items])
 			}
 		})
+		// console.log(section)
 	}, [section]);
 
 	useEffect(() => {
@@ -41,12 +43,12 @@ const ThemeGroup = ({dataGroup,section}) => {
 		// thirdGroupItems所有24 items做分割，從起始點startIndex開始加上每頁顯示items數量
 		setThirdList(thirdGroupItems.slice(startIndex, startIndex + THIRDLIST_PER_PAGE))
 	}, [thirdGroupItems, page]);
-
+console.log(firstInfo)
 	return (
 		<section className="c-themeGroup">
 			<div className="c-themeGroup__tabs">
 				<ul className="c-themeGroup__tabsList">
-					{sectionTab.map(items =>(<li><button type="button" className="c-themeGroup__tabsListTab is_active">{items.Nodes.Link.Text}</button></li>))}
+					{sectionTab.map(items =>(<li><button type="button" className="c-themeGroup__tabsListTab is_active">{items.Nodes[0].Link.Text}</button></li>))}
 				</ul>
 			</div>
 			<div className="c-themeGroup__left" style={{backgroundColor:firstInfo.Link.Background}}>
