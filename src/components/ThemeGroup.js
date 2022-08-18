@@ -43,7 +43,7 @@ const ThemeGroup = ({dataGroup,section}) => {
 		// thirdGroupItems所有24 items做分割，從起始點startIndex開始加上每頁顯示items數量
 		setThirdList(thirdGroupItems.slice(startIndex, startIndex + THIRDLIST_PER_PAGE))
 	}, [thirdGroupItems, page]);
-
+console.log(firstInfo)
 	return (
 		<section className="c-themeGroup">
 			<div className="c-themeGroup__tabs">
