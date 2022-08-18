@@ -10,7 +10,7 @@ const ThemeGroup = ({dataGroup,section}) => {
 	const [thirdList, setThirdList] = useState([]);
 	const [thirdGroupItems, setThirdGroupItems] = useState([]);
 	const [sectionTab, setSectionTab] = useState([]);
-	const [tabContent, setTabContent] = useState([]);
+	const [tabContent, setTabContent] = useState(1);
 	const [page, setPage] = useState(1);
 	// 設定每次頁面切換數量
 	const THIRDLIST_PER_PAGE = 6;
@@ -35,7 +35,6 @@ const ThemeGroup = ({dataGroup,section}) => {
 				setSectionTab((prev) => [...prev,items])
 			}
 		})
-		// console.log(section)
 	}, [section]);
 
 	useEffect(() => {
@@ -44,12 +43,12 @@ const ThemeGroup = ({dataGroup,section}) => {
 		// thirdGroupItems所有24 items做分割，從起始點startIndex開始加上每頁顯示items數量
 		setThirdList(thirdGroupItems.slice(startIndex, startIndex + THIRDLIST_PER_PAGE))
 	}, [thirdGroupItems, page]);
-console.log(secondList)
+
 	return (
 		<section className="c-themeGroup">
 			<div className="c-themeGroup__tabs">
 				<ul className="c-themeGroup__tabsList">
-					{sectionTab.map(items =>(<li><button type="button" className="c-themeGroup__tabsListTab is_active">{items.Nodes[0].Link.Text}</button></li>))}
+					{sectionTab.map(items =>(<li><button type="button" className="c-themeGroup__tabsListTab is_active" onClick={() => setTabContent()}>{items.Nodes[0].Link.Text}</button></li>))}
 				</ul>
 			</div>
 			<div className="c-themeGroup__left" style={{backgroundColor:firstInfo.Link.Background}}>
@@ -58,7 +57,7 @@ console.log(secondList)
 					<h1 className="c-themeGroup__title">{firstInfo.Link.Text2}</h1>
 					<ul className="o-keywords">
 						{secondList.map(item => (
-							<li className="o-keywords__tag" key={item.Id}>
+							<li className="o-keywords__tag" key={item.Key}>
 								<a href={item.ExtraData.ElementType === 'Url' ? item.Link.Url : renderSwitchTypeUrl(item.ExtraData.ElementType)}>#{item.Link.Text}</a>
 							</li>
 						))}
@@ -72,7 +71,7 @@ console.log(secondList)
 				<div className="c-listGroup">
 					<ul className="c-listGroup__list">
 						{thirdList.map((item) => (
-							<li className="c-listGroup__item" key={item.Id}>
+							<li className="c-listGroup__item" key={item.List}>
 								<div className="o-productInfo">
 									<a href={item.ExtraData.ElementType === 'Url' ? item.Link.Url : renderSwitchTypeUrl(item.ExtraData.ElementType) + item.Link.Url} alt="prodlink">
 										<img src={`https://cs-a.ecimg.tw` + item.Img.Src} alt="商品圖" className="o-productInfo__img" />
@@ -110,7 +109,7 @@ ThemeGroup.propTypes = {
 			}),
 			Id: PropTypes.number,
 			Img: PropTypes.shape({
-				Src: PropTypes.string,
+				Src: PropTypes.string
 			}),
 			Link: PropTypes.shape({
 				Text: PropTypes.string,
