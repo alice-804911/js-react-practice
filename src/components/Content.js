@@ -16,7 +16,7 @@ function Content() {
 			.then(response => {
 				// handle sucess
 				console.log(response.data)
-				const allDatas = response.data.window2.Blocks[3].Nodes;
+				const allDatas = response.data.window2.Blocks;
 				setDataGroup(allDatas);
 				const sectionData = response.data.window2.Blocks;
 				setSection(sectionData);

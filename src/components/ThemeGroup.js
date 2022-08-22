@@ -19,7 +19,7 @@ const ThemeGroup = ({dataGroup,section}) => {
 	useEffect(() => {
 		dataGroup.forEach(item => {
 			if (item.Id === 1) {
-				setFirstInfo({ ...item })
+					setFirstInfo({ ...item })
 			} 
 			if (item.Id >= 2 && item.Id <= 6) {
 				setSecondList((prev) => [...prev,item])
