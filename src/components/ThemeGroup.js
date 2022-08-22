@@ -10,16 +10,17 @@ const ThemeGroup = ({dataGroup,section}) => {
 	const [thirdList, setThirdList] = useState([]);
 	const [thirdGroupItems, setThirdGroupItems] = useState([]);
 	const [sectionTab, setSectionTab] = useState([]);
-	const [tabContent, setTabContent] = useState(1);
+	const [tabContent, setTabContent] = useState([]);
 	const [page, setPage] = useState(1);
 	// 設定每次頁面切換數量
 	const THIRDLIST_PER_PAGE = 6;
 	// 計算總頁數
 	const PAGETOTAL = thirdGroupItems.length / THIRDLIST_PER_PAGE;
+
 	useEffect(() => {
 		dataGroup.forEach(item => {
 			if (item.Id === 1) {
-					setFirstInfo({ ...item })
+				setFirstInfo({ ...item })
 			} 
 			if (item.Id >= 2 && item.Id <= 6) {
 				setSecondList((prev) => [...prev,item])
@@ -27,8 +28,10 @@ const ThemeGroup = ({dataGroup,section}) => {
 		})
 		// 過濾item : 大於或等於Id 7之後的items列入setsetThirdGroupItems，也就是Id 7 ~ Id 24
 		setThirdGroupItems(dataGroup.filter(item => item.Id >= 7))
+		
 	}, [dataGroup]);
-		// sectionTab
+
+	// sectionTab
 	useEffect(() => {
 		section.forEach(items => {
 			if (items.BlockId <= 5){
@@ -43,7 +46,7 @@ const ThemeGroup = ({dataGroup,section}) => {
 		// thirdGroupItems所有24 items做分割，從起始點startIndex開始加上每頁顯示items數量
 		setThirdList(thirdGroupItems.slice(startIndex, startIndex + THIRDLIST_PER_PAGE))
 	}, [thirdGroupItems, page]);
-console.log(firstInfo)
+
 	return (
 		<section className="c-themeGroup">
 			<div className="c-themeGroup__tabs">
