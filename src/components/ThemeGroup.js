@@ -22,38 +22,49 @@ const ThemeGroup = ({dataGroup,section}) => {
 			if (item.Id === 1) {
 				setFirstInfo({ ...item })
 			} 
-			if (item.Id >= 2 && item.Id <= 6) {
-				setSecondList((prev) => [...prev,item])
-			}
+			// if (item.Id >= 2 && item.Id <= 6) {
+			// 	setSecondList((prev) => [...prev,items])
+			// }
 		})
 		// 過濾item : 大於或等於Id 7之後的items列入setsetThirdGroupItems，也就是Id 7 ~ Id 24
-		setThirdGroupItems(dataGroup.filter(item => item.Id >= 7))
-		
+		// setThirdGroupItems(dataGroup.filter(item => item.Id >= 7))
 	}, [dataGroup]);
 
 	// sectionTab
 	useEffect(() => {
-		section.forEach(items => {
-			if (items.BlockId <= 5){
-				setSectionTab((prev) => [...prev,items])
+		section.forEach(item => {
+			if (item.BlockId <= 5){
+				setSectionTab((prev) => [...prev,item])
 			}
 		})
+		setThirdGroupItems(section.filter(item => item.Id >= 7))
+		setTabContent(section.filter(item => item.BlockId === 1))
 	}, [section]);
-
+	
+	useEffect(() => {
+		tabContent.forEach(item => {
+			if (item.Nodes[1].Id >= 2 && item.Nodes[5].Id <= 6) {
+				setSecondList((prev) => [...prev,item])
+			}
+		})
+	},[tabContent])
+	console.log(secondList)
+	console.log(tabContent)
 	useEffect(() => {
 		// page 起始點 : 頁數減掉 1 再 * 每頁的數量(THIRDLIST_PER_PAGE = 6)
 		const startIndex = (page - 1) * THIRDLIST_PER_PAGE
 		// thirdGroupItems所有24 items做分割，從起始點startIndex開始加上每頁顯示items數量
 		setThirdList(thirdGroupItems.slice(startIndex, startIndex + THIRDLIST_PER_PAGE))
-	}, [thirdGroupItems, page]);
+	}, [thirdGroupItems, page, ]);
 
 	return (
 		<section className="c-themeGroup">
 			<div className="c-themeGroup__tabs">
 				<ul className="c-themeGroup__tabsList">
-					{sectionTab.map(items =>(<li><button type="button" className="c-themeGroup__tabsListTab is_active" onClick={() => setTabContent()}>{items.Nodes[0].Link.Text}</button></li>))}
+					{sectionTab.map(item =>(<li><button type="button" className="c-themeGroup__tabsListTab is_active" onClick={() => setTabContent()}>{item.Nodes[0].Link.Text}</button></li>))}
 				</ul>
 			</div>
+			{tabContent.map(item =>(<div>
 			<div className="c-themeGroup__left" style={{backgroundColor:firstInfo.Link.Background}}>
 				<div className="c-themeGroup__tag">主題推薦</div>
 				<div className="c-themeGroup__info">
@@ -98,6 +109,7 @@ const ThemeGroup = ({dataGroup,section}) => {
 					</div>
 				</div>
 			</div>
+			</div>))}
 		</section>
 	)
 }
