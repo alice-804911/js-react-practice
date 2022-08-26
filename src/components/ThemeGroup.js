@@ -38,20 +38,22 @@ const ThemeGroup = ({dataGroup,section}) => {
 			}
 		})
 		setThirdGroupItems(section.filter(item => item.Id >= 7))
-		section.forEach(item => {
-			if (item.BlockId === 2){
-				setTabContent((prev) => [...prev,item])
-			}
-		})
+		setTabContent(section.filter(item => item.BlockId === 1))
+		// section.forEach(item => {
+		// 	if (item.BlockId === 1){
+		// 		setTabContent((prev) => [...prev,item])
+		// 	}
+		// })
 	}, [section]);
 	
 	useEffect(() => {
 		tabContent.forEach((item) => {
-			if (item.Nodes[0].Id >= 2 && item.Nodes[0].Id <= 4) {
+			if (item.Nodes.Id >= 2 && item.Nodes.id <= 6) {
 				setSecondList((prev) => [...prev,item])
 			}
 		})
 	},[tabContent])
+	// console.log(secondList)
 	console.log(tabContent)
 	useEffect(() => {
 		// page 起始點 : 頁數減掉 1 再 * 每頁的數量(THIRDLIST_PER_PAGE = 6)
@@ -67,7 +69,6 @@ const ThemeGroup = ({dataGroup,section}) => {
 					{sectionTab.map(item =>(<li><button type="button" className="c-themeGroup__tabsListTab is_active" onClick={() => setTabContent()}>{item.Nodes[0].Link.Text}</button></li>))}
 				</ul>
 			</div>
-			{tabContent.map(item =>(<div>
 			<div className="c-themeGroup__left" style={{backgroundColor:firstInfo.Link.Background}}>
 				<div className="c-themeGroup__tag">主題推薦</div>
 				<div className="c-themeGroup__info">
@@ -112,7 +113,6 @@ const ThemeGroup = ({dataGroup,section}) => {
 					</div>
 				</div>
 			</div>
-			</div>))}
 		</section>
 	)
 }
