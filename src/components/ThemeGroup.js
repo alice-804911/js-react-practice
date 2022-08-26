@@ -38,17 +38,20 @@ const ThemeGroup = ({dataGroup,section}) => {
 			}
 		})
 		setThirdGroupItems(section.filter(item => item.Id >= 7))
-		setTabContent(section.filter(item => item.BlockId === 1))
+		section.forEach(item => {
+			if (item.BlockId === 2){
+				setTabContent((prev) => [...prev,item])
+			}
+		})
 	}, [section]);
 	
 	useEffect(() => {
-		tabContent.forEach(item => {
-			if (item.Nodes[1].Id >= 2 && item.Nodes[5].Id <= 6) {
+		tabContent.forEach((item) => {
+			if (item.Nodes[0].Id >= 2 && item.Nodes[0].Id <= 4) {
 				setSecondList((prev) => [...prev,item])
 			}
 		})
 	},[tabContent])
-	console.log(secondList)
 	console.log(tabContent)
 	useEffect(() => {
 		// page 起始點 : 頁數減掉 1 再 * 每頁的數量(THIRDLIST_PER_PAGE = 6)
