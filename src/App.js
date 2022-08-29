@@ -1,10 +1,8 @@
-import Content from './components/Content';
-import './App.scss';
+import Content from "./components/Content";
+import "./App.scss";
 
 function App() {
-  return (
-    <Content />
-  );
+  return <Content />;
 }
 
 export default App;

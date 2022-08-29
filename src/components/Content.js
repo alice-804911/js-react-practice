@@ -1,34 +1,35 @@
-import ThemeGroup from './ThemeGroup';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import ThemeGroup from "./ThemeGroup";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 // 抓取線上資料
 const Content = () => {
-	const [sections, setSections] = useState([]);
+  const [sections, setSections] = useState([]);
 
-	useEffect(() => {
-		getAllDatas();
-	}, []);
+  useEffect(() => {
+    getAllDatas();
+  }, []);
 
-	const getAllDatas = () => {
-		axios.get('/index/stage/v1/data&27655702')
-			.then(response => {
-				setSections(response.data.window2.Blocks);
-				console.log(response)
-			})
-			.catch(error => {
-				// handle error
-				console.log(error);
-			})
-			.then(() => {
-				// always executed
-			});
-	}
+  const getAllDatas = () => {
+    axios
+      .get("/index/stage/v1/data&27655702")
+      .then((response) => {
+        setSections(response.data.window2.Blocks);
+        console.log(response);
+      })
+      .catch((error) => {
+        // handle error
+        console.log(error);
+      })
+      .then(() => {
+        // always executed
+      });
+  };
 
-	return (
-		<div className="c-content">
-			<ThemeGroup sections={sections} />
-		</div>
-	)
-}
+  return (
+    <div className="c-content">
+      <ThemeGroup sections={sections} />
+    </div>
+  );
+};
 export default Content;
