@@ -7,14 +7,14 @@ const ThemeGroup = ({ sections }) => {
 		{Link:{Text:'', Text2:'', Background:''},Img:{Src:'', Text:''}}
 		);
 	const [currentSection, setCurrentSection] = useState([]);
-	const [secondList, setSecondList] = useState([]);
-	const [thirdList, setThirdList] = useState([]);
-	const [thirdGroupItems, setThirdGroupItems] = useState([]);
+	const [keyTags, setKeyTags] = useState([]);
+	const [itemList, setItemList] = useState([]);
+	const [groupItems, setGroupItems] = useState([]);
 	const [page, setPage] = useState(1);
 	// 設定每次頁面切換數量
-	const THIRDLIST_PER_PAGE = 6;
+	const ITEMLIST_PER_PAGE = 6;
 	// 計算總頁數
-	const PAGETOTAL = thirdGroupItems.length / THIRDLIST_PER_PAGE;
+	const PAGETOTAL = groupItems.length / ITEMLIST_PER_PAGE;
 
 	useEffect(() => {
 		console.log("sections...", sections)
@@ -22,29 +22,25 @@ const ThemeGroup = ({ sections }) => {
 	}, [sections]);
 
 	useEffect(() => {
+		// (?.) = Optional chaining 
 		if (currentSection?.Nodes === undefined) return
 		console.log("currentSection: ", currentSection)
-		setThirdGroupItems(currentSection.Nodes.filter(({ Id: id }) => id >= 7))
+		setKeyTags(currentSection.Nodes.filter(({ Id: id }) => id >= 2 && id <= 6))
+		setGroupItems(currentSection.Nodes.filter(({ Id: id }) => id >= 7))
 		currentSection.Nodes.forEach(item => {
 			const { Id: id } = item
 			if (id === 1) {
 				setFirstInfo({ ...item })
 			}
-			if (id >= 2 && id <= 6) {
-				setSecondList((prev) => [...prev,item])
-			}
 		})
-		// 過濾item : 大於或等於Id 7之後的items列入setsetThirdGroupItems，也就是Id 7 ~ Id 24
-		// setThirdGroupItems(dataGroup.filter(item => item.Id >= 7))
 	}, [currentSection]);
 
-	// console.log(secondList)
 	useEffect(() => {
-		// page 起始點 : 頁數減掉 1 再 * 每頁的數量(THIRDLIST_PER_PAGE = 6)
-		const startIndex = (page - 1) * THIRDLIST_PER_PAGE
-		// thirdGroupItems所有24 items做分割，從起始點startIndex開始加上每頁顯示items數量
-		setThirdList(thirdGroupItems.slice(startIndex, startIndex + THIRDLIST_PER_PAGE))
-	}, [thirdGroupItems, page, ]);
+		// page 起始點 : 頁數減掉 1 再 * 每頁的數量(ITEMLIST_PER_PAGE = 6)
+		const startIndex = (page - 1) * ITEMLIST_PER_PAGE
+		// groupItems所有24 items做分割，從起始點startIndex開始加上每頁顯示items數量
+		setItemList(groupItems.slice(startIndex, startIndex + ITEMLIST_PER_PAGE))
+	}, [groupItems, page, ]);
 
 	return (
 		<section className="c-themeGroup">
@@ -58,7 +54,7 @@ const ThemeGroup = ({ sections }) => {
 				<div className="c-themeGroup__info">
 					<h1 className="c-themeGroup__title">{firstInfo.Link.Text2}</h1>
 					<ul className="o-keywords">
-						{secondList.map(item => (
+						{keyTags.map(item => (
 							<li className="o-keywords__tag" key={item.Key}>
 								<a href={item.ExtraData.ElementType === 'Url' ? item.Link.Url : renderSwitchTypeUrl(item.ExtraData.ElementType)}>#{item.Link.Text}</a>
 							</li>
@@ -72,7 +68,7 @@ const ThemeGroup = ({ sections }) => {
 			<div className="c-themeGroup__right">
 				<div className="c-listGroup">
 					<ul className="c-listGroup__list">
-						{thirdList.map((item) => (
+						{itemList.map((item) => (
 							<li className="c-listGroup__item" key={item.List}>
 								<div className="o-productInfo">
 									<a href={item.ExtraData.ElementType === 'Url' ? item.Link.Url : renderSwitchTypeUrl(item.ExtraData.ElementType) + item.Link.Url} alt="prodlink">
@@ -102,7 +98,7 @@ const ThemeGroup = ({ sections }) => {
 }
 
 ThemeGroup.propTypes = {
-	dataGroup: PropTypes.arrayOf(
+	sections: PropTypes.arrayOf(
 		// .shape特定形式對象
 		PropTypes.shape({
 			ExtraData: PropTypes.shape({
