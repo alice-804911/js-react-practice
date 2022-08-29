@@ -3,9 +3,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // 抓取線上資料
-function Content() {
-	const [dataGroup, setDataGroup] = useState([]);
-	const [section, setSection] = useState([]);
+const Content = () => {
+	const [sections, setSections] = useState([]);
 
 	useEffect(() => {
 		getAllDatas();
@@ -14,12 +13,8 @@ function Content() {
 	const getAllDatas = () => {
 		axios.get('/index/stage/v1/data&27655702')
 			.then(response => {
-				// handle sucess
-				console.log(response.data)
-				const allDatas = response.data.window2.Blocks[0].Nodes;
-				setDataGroup(allDatas);
-				const sectionData = response.data.window2.Blocks;
-				setSection(sectionData);
+				setSections(response.data.window2.Blocks);
+				console.log(response)
 			})
 			.catch(error => {
 				// handle error
@@ -29,11 +24,10 @@ function Content() {
 				// always executed
 			});
 	}
-	
+
 	return (
 		<div className="c-content">
-			<ThemeGroup dataGroup={dataGroup} section={section} />
-			<ThemeGroup dataGroup={dataGroup} section={section}/>
+			<ThemeGroup sections={sections} />
 		</div>
 	)
 }

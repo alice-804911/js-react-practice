@@ -2,78 +2,59 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import renderSwitchTypeUrl from '../utils';
 
-const ThemeGroup = ({dataGroup,section}) => {
+const ThemeGroup = ({ sections }) => {
 	const [firstInfo, setFirstInfo] = useState(
 		{Link:{Text:'', Text2:'', Background:''},Img:{Src:'', Text:''}}
 		);
-	const [secondList, setSecondList] = useState([]);
-	const [thirdList, setThirdList] = useState([]);
-	const [thirdGroupItems, setThirdGroupItems] = useState([]);
-	const [sectionTab, setSectionTab] = useState([]);
-	const [tabContent, setTabContent] = useState([]);
+	const [currentSection, setCurrentSection] = useState([]);
+	const [keyTags, setKeyTags] = useState([]);
+	const [itemList, setItemList] = useState([]);
+	const [groupItems, setGroupItems] = useState([]);
 	const [page, setPage] = useState(1);
 	// 設定每次頁面切換數量
-	const THIRDLIST_PER_PAGE = 6;
+	const ITEMLIST_PER_PAGE = 6;
 	// 計算總頁數
-	const PAGETOTAL = thirdGroupItems.length / THIRDLIST_PER_PAGE;
+	const PAGETOTAL = groupItems.length / ITEMLIST_PER_PAGE;
 
 	useEffect(() => {
-		dataGroup.forEach(item => {
-			if (item.Id === 1) {
+		console.log("sections...", sections)
+		setCurrentSection(sections[0])
+	}, [sections]);
+
+	useEffect(() => {
+		// (?.) = Optional chaining 
+		if (currentSection?.Nodes === undefined) return
+		console.log("currentSection: ", currentSection)
+		setKeyTags(currentSection.Nodes.filter(({ Id: id }) => id >= 2 && id <= 6))
+		setGroupItems(currentSection.Nodes.filter(({ Id: id }) => id >= 7))
+		currentSection.Nodes.forEach(item => {
+			const { Id: id } = item
+			if (id === 1) {
 				setFirstInfo({ ...item })
-			} 
-			// if (item.Id >= 2 && item.Id <= 6) {
-			// 	setSecondList((prev) => [...prev,items])
-			// }
+			}
 		})
-		// 過濾item : 大於或等於Id 7之後的items列入setsetThirdGroupItems，也就是Id 7 ~ Id 24
-		// setThirdGroupItems(dataGroup.filter(item => item.Id >= 7))
-	}, [dataGroup]);
+	}, [currentSection]);
 
-	// sectionTab
 	useEffect(() => {
-		section.forEach(item => {
-			if (item.BlockId <= 5){
-				setSectionTab((prev) => [...prev,item])
-			}
-		})
-		setThirdGroupItems(section.filter(item => item.Id >= 7))
-		section.forEach(item => {
-			if (item.BlockId === 2){
-				setTabContent((prev) => [...prev,item])
-			}
-		})
-	}, [section]);
-	
-	useEffect(() => {
-		tabContent.forEach((item) => {
-			if (item.Nodes[0].Id >= 2 && item.Nodes[0].Id <= 4) {
-				setSecondList((prev) => [...prev,item])
-			}
-		})
-	},[tabContent])
-	console.log(tabContent)
-	useEffect(() => {
-		// page 起始點 : 頁數減掉 1 再 * 每頁的數量(THIRDLIST_PER_PAGE = 6)
-		const startIndex = (page - 1) * THIRDLIST_PER_PAGE
-		// thirdGroupItems所有24 items做分割，從起始點startIndex開始加上每頁顯示items數量
-		setThirdList(thirdGroupItems.slice(startIndex, startIndex + THIRDLIST_PER_PAGE))
-	}, [thirdGroupItems, page, ]);
+		// page 起始點 : 頁數減掉 1 再 * 每頁的數量(ITEMLIST_PER_PAGE = 6)
+		const startIndex = (page - 1) * ITEMLIST_PER_PAGE
+		// groupItems所有24 items做分割，從起始點startIndex開始加上每頁顯示items數量
+		setItemList(groupItems.slice(startIndex, startIndex + ITEMLIST_PER_PAGE))
+	}, [groupItems, page, ]);
 
 	return (
 		<section className="c-themeGroup">
 			<div className="c-themeGroup__tabs">
 				<ul className="c-themeGroup__tabsList">
-					{sectionTab.map(item =>(<li><button type="button" className="c-themeGroup__tabsListTab is_active" onClick={() => setTabContent()}>{item.Nodes[0].Link.Text}</button></li>))}
+					{sections.map(( item, index ) =>(<li><button type="button" className="c-themeGroup__tabsListTab is_active" onClick={() => setCurrentSection(sections[index])}>{item.Nodes[0].Link.Text}</button></li>))}
 				</ul>
 			</div>
-			{tabContent.map(item =>(<div>
 			<div className="c-themeGroup__left" style={{backgroundColor:firstInfo.Link.Background}}>
 				<div className="c-themeGroup__tag">主題推薦</div>
 				<div className="c-themeGroup__info">
 					<h1 className="c-themeGroup__title">{firstInfo.Link.Text2}</h1>
 					<ul className="o-keywords">
-						{secondList.map(item => (
+						{keyTags.map(item => (
 							<li className="o-keywords__tag" key={item.Key}>
 								<a href={item.ExtraData.ElementType === 'Url' ? item.Link.Url : renderSwitchTypeUrl(item.ExtraData.ElementType)}>#{item.Link.Text}</a>
 							</li>
@@ -87,7 +68,7 @@ const ThemeGroup = ({dataGroup,section}) => {
 			<div className="c-themeGroup__right">
 				<div className="c-listGroup">
 					<ul className="c-listGroup__list">
-						{thirdList.map((item) => (
+						{itemList.map((item) => (
 							<li className="c-listGroup__item" key={item.List}>
 								<div className="o-productInfo">
 									<a href={item.ExtraData.ElementType === 'Url' ? item.Link.Url : renderSwitchTypeUrl(item.ExtraData.ElementType) + item.Link.Url} alt="prodlink">
@@ -112,13 +93,12 @@ const ThemeGroup = ({dataGroup,section}) => {
 					</div>
 				</div>
 			</div>
-			</div>))}
 		</section>
 	)
 }
 
 ThemeGroup.propTypes = {
-	dataGroup: PropTypes.arrayOf(
+	sections: PropTypes.arrayOf(
 		// .shape特定形式對象
 		PropTypes.shape({
 			ExtraData: PropTypes.shape({
