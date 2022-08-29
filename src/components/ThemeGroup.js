@@ -43,7 +43,7 @@ const ThemeGroup = ({ sections }) => {
       <div className="c-themeGroup__tabs">
         <ul className="c-themeGroup__tabsList">
           {sections.map((item, index) => (
-            <li>
+            <li key={`block-${item.BlockId}`}>
               <button
                 type="button"
                 className="c-themeGroup__tabsListTab is_active"
@@ -64,7 +64,7 @@ const ThemeGroup = ({ sections }) => {
           <h1 className="c-themeGroup__title">{firstInfo.Link.Text2}</h1>
           <ul className="o-keywords">
             {keyTags.map((item) => (
-              <li className="o-keywords__tag" key={item.Key}>
+              <li className="o-keywords__tag" key={`keyTag-${item.Id}`}>
                 <a
                   href={
                     item.ExtraData.ElementType === "Url"
@@ -89,7 +89,7 @@ const ThemeGroup = ({ sections }) => {
         <div className="c-listGroup">
           <ul className="c-listGroup__list">
             {itemList.map((item) => (
-              <li className="c-listGroup__item" key={item.List}>
+              <li className="c-listGroup__item" key={`item-${item.Id}`}>
                 <div className="o-productInfo">
                   <a
                     href={
