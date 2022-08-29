@@ -3,11 +3,7 @@ import PropTypes from "prop-types";
 import renderSwitchTypeUrl from "../utils";
 
 const ThemeGroup = ({ sections }) => {
-  const [firstInfo, setFirstInfo] = useState({
-    Link: { Text: "", Text2: "", Background: "" },
-    Img: { Src: "", Text: "" },
-  });
-
+  const [groupInfo, setGroupInfo] = useState(null);
   const [currentSection, setCurrentSection] = useState([]);
   const [keyTags, setKeyTags] = useState([]);
   const [itemList, setItemList] = useState([]);
@@ -28,7 +24,7 @@ const ThemeGroup = ({ sections }) => {
 
     setKeyTags(currentSection.Nodes.filter(({ Id: id }) => id >= 2 && id <= 6));
     setGroupItems(currentSection.Nodes.filter(({ Id: id }) => id >= 7));
-    setFirstInfo(...currentSection.Nodes.filter(({ Id: id }) => id === 1));
+    setGroupInfo(...currentSection.Nodes.filter(({ Id: id }) => id === 1));
   }, [currentSection]);
 
   useEffect(() => {
@@ -38,7 +34,7 @@ const ThemeGroup = ({ sections }) => {
     setItemList(groupItems.slice(startIndex, startIndex + ITEMLIST_PER_PAGE));
   }, [groupItems, page]);
 
-  return (
+  return groupInfo ? (
     <section className="c-themeGroup">
       <div className="c-themeGroup__tabs">
         <ul className="c-themeGroup__tabsList">
@@ -57,11 +53,11 @@ const ThemeGroup = ({ sections }) => {
       </div>
       <div
         className="c-themeGroup__left"
-        style={{ backgroundColor: firstInfo.Link.Background }}
+        style={{ backgroundColor: groupInfo.Link.Background }}
       >
         <div className="c-themeGroup__tag">主題推薦</div>
         <div className="c-themeGroup__info">
-          <h1 className="c-themeGroup__title">{firstInfo.Link.Text2}</h1>
+          <h1 className="c-themeGroup__title">{groupInfo.Link.Text2}</h1>
           <ul className="o-keywords">
             {keyTags.map((item) => (
               <li className="o-keywords__tag" key={`keyTag-${item.Id}`}>
@@ -80,7 +76,7 @@ const ThemeGroup = ({ sections }) => {
         </div>
         <div className="c-themeGroup__banner">
           <img
-            src={`https://fs-a.ecimg.tw` + firstInfo.Img.Src}
+            src={`https://fs-a.ecimg.tw` + groupInfo.Img.Src}
             alt="主打推薦Banner"
           />
         </div>
@@ -137,6 +133,8 @@ const ThemeGroup = ({ sections }) => {
         </div>
       </div>
     </section>
+  ) : (
+    <></>
   );
 };
 
