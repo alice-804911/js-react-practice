@@ -19,14 +19,13 @@ const ThemeGroup = ({ sections }) => {
   const PAGETOTAL = groupItems.length / ITEMLIST_PER_PAGE;
 
   useEffect(() => {
-    console.log("sections...", sections);
     setCurrentSection(sections[0]);
   }, [sections]);
 
   useEffect(() => {
     // (?.) = Optional chaining
     if (currentSection?.Nodes === undefined) return;
-    console.log("currentSection: ", currentSection);
+
     setKeyTags(currentSection.Nodes.filter(({ Id: id }) => id >= 2 && id <= 6));
     setGroupItems(currentSection.Nodes.filter(({ Id: id }) => id >= 7));
     setFirstInfo(...currentSection.Nodes.filter(({ Id: id }) => id === 1));

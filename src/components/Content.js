@@ -15,7 +15,6 @@ const Content = () => {
       .get("/index/stage/v1/data&27655702")
       .then((response) => {
         setSections(response.data.window2.Blocks);
-        console.log(response);
       })
       .catch((error) => {
         // handle error
