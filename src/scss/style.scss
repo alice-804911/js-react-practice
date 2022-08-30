@@ -22,6 +22,10 @@ body {
     overflow: hidden;
     background-color: #f2f2f2;
     border: 1px solid #c7c7c7;
+		.is_active {
+      color: #fff;
+      background: #0090eb;
+    }
   }
   &__tabsListTab {
     border: 0;
