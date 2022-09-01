@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 import renderSwitchTypeUrl from "../utils";
 
 const ThemeGroup = ({ sections }) => {
-  const [groupInfo, setGroupInfo] = useState(null);
+  const [groupInfo, setGroupInfo] = useState({
+    Link: { Text: "", Text2: "", Background: "" },
+    Img: { Src: "", Text: "" },
+  });
   const [currentSection, setCurrentSection] = useState([]);
   const [keyTags, setKeyTags] = useState([]);
   const [itemList, setItemList] = useState([]);
@@ -38,7 +41,7 @@ const ThemeGroup = ({ sections }) => {
 		setIsActive(current => !current);
 	}
 
-  return groupInfo ? (
+  return (
     <section className="c-themeGroup">
       <div className="c-themeGroup__tabs">
         <ul className="c-themeGroup__tabsList">
@@ -140,8 +143,6 @@ const ThemeGroup = ({ sections }) => {
         </div>
       </div>
     </section>
-  ) : (
-    <></>
   );
 };
 
