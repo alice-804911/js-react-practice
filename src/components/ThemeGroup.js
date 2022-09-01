@@ -12,6 +12,7 @@ const ThemeGroup = ({ sections }) => {
   const [itemList, setItemList] = useState([]);
   const [groupItems, setGroupItems] = useState([]);
   const [page, setPage] = useState(1);
+	const [active, setActive] = useState('');
   // 設定每次頁面切換數量
   const ITEMLIST_PER_PAGE = 6;
   // 計算總頁數
@@ -36,7 +37,7 @@ const ThemeGroup = ({ sections }) => {
     setItemList(groupItems.slice(startIndex, startIndex + ITEMLIST_PER_PAGE));
   }, [groupItems, page]);
 
-	const ACTIVE = "c-themeGroup__tabsListTab"
+	
 
   return (
     <section className="c-themeGroup">
@@ -46,8 +47,11 @@ const ThemeGroup = ({ sections }) => {
             <li key={`block-${item.BlockId}`}>
               <button
                 type="button"
-                className={ACTIVE}
-                onClick={() => setCurrentSection(sections[index])}
+                className={`c-themeGroup__tabsListTab ${active === item && 'is_active'}`}
+                onClick={() => {
+									setCurrentSection(sections[index]);
+									setActive(item)
+								}}
               >
                 {item.Nodes[0].Link.Text}
               </button>
