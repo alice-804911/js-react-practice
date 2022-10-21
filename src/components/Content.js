@@ -1,6 +1,9 @@
 import ThemeGroup from "./ThemeGroup";
+import ProdBriefingPayment from "./ProdBriefingPayment";
+import ProdBriefingSlogan from "./ProdBriefingSlogan";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import '.'
 
 // 抓取線上資料
 const Content = () => {
@@ -28,6 +31,8 @@ const Content = () => {
   return (
     <div className="c-content">
       <ThemeGroup sections={sections} />
+			<ProdBriefingSlogan />
+			<ProdBriefingPayment />
     </div>
   );
 };

@@ -1,0 +1,377 @@
+.c-prod {
+  &Briefing {
+    padding: 24px 32px;
+    @include mixin.boxShape;
+    background-color: variables.$color-white;
+    display: flex;
+    &__img {
+      width: 584px;
+    }
+    &__area {
+      width: calc(100% - 616px);
+      margin-left: 32px;
+    }
+    &__tipIcon {
+      background: variables.$color-primary--100;
+      border-radius: 4px;
+      padding: 2px 8px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 14px;
+      color: variables.$color-primary;
+      flex-shrink: 0;
+    }
+    //promotion
+    &__promotion {
+      @include mixin.flex(space-between, center);
+      padding: 16px;
+      border-radius: 8px;
+      background: variables.$gray-lightest;
+      margin-top: 32px;
+      &Info {
+        margin-left: 8px;
+        padding-right: 16px;
+        width: 420px;
+        border-right: 1px solid variables.$gray-lighter;
+        li {
+          @include mixin.flex(normal, center);
+        }
+        li + li {
+          margin-top: 17px;
+        }
+      }
+      &InfoTitle {
+        font-weight: 400;
+        font-size: 16px;
+        color: variables.$gray-dark;
+        margin-left: 8px;
+        @include mixin.textOverSingle;
+      }
+    }
+    //Slogan
+    &__slogan {
+      padding: 16px 0;
+      &Info {
+        @include mixin.textOverMulti(5);
+        max-height: calc(5 * 1.5 * 16px);
+        &.is-expanded {
+          -webkit-line-clamp: unset;
+          max-height: none;
+        }
+      }
+      ul {
+        list-style: disc;
+      }
+      ol {
+        list-style: decimal;
+      }
+      li {
+        margin-left: 22px;
+      }
+      a {
+        color: variables.$color-secondary;
+      }
+    }
+    //Combine
+    &__combine {
+      display: flex;
+      padding: 16px 0;
+      &Title {
+        width: 72px;
+        margin-right: 16px;
+        color: variables.$gray;
+      }
+      &List {
+        @include mixin.flex(space-between, normal);
+        flex-wrap: wrap;
+        width: 472px;
+        .o-prodInfo {
+          &__title {
+            font-size: 14px;
+            height: 64px;
+            -webkit-line-clamp: 3;
+          }
+          &__body {
+            padding: 8px 0;
+          }
+          &__img {
+            width: 106px;
+            height: 106px;
+          }
+        }
+      }
+      &Item {
+        width: 106px;
+        cursor: pointer;
+        margin-bottom: 8px;
+      }
+    }
+    //Payment
+    &__payment {
+      display: flex;
+      padding: 16px 0;
+      &Title {
+        width: 72px;
+        margin-right: 16px;
+        color: variables.$gray;
+      }
+      &List {
+        width: 472px;
+        @include mixin.flex(normal, flex-start);
+        flex-direction: column;
+        .o-iconFonts--actionQuestionCircle {
+          font-size: 14px;
+          margin-left: 5px;
+          color: variables.$gray;
+        }
+        .btn {
+          margin-left: -8px;
+        }
+      }
+      &Item {
+        &:first-child {
+          padding-top: 0;
+        }
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid variables.$gray-lighter;
+        dt {
+          font-weight: 500;
+        }
+      }
+    }
+    //Giveaway
+    &__giveawayItem {
+      @include mixin.flex(space-between, baseline);
+      padding: 16px 0;
+      background: variables.$color-white;
+    }
+    &__giveawayItem + &__giveawayItem {
+      border-top: 1px solid variables.$gray-lighter;
+    }
+    &__giveawayContent {
+      width: 380px;
+      font-size: 16px;
+      color: variables.$font-color;
+      flex-grow: 1;
+      margin-left: 16px;
+    }
+    &__giveawayTitle {
+      font-weight: 500;
+      @include mixin.textOverSingle;
+    }
+    &__giveawayQty {
+      margin: 0 5px;
+    }
+    &__giveawayHighLight {
+      color: variables.$color-primary--400;
+      margin: 0 2px;
+    }
+    &__giveawayProd {
+      li {
+        font-weight: 400;
+        margin: 4px 0;
+        @include mixin.textOverSingle;
+      }
+    }
+    //Title
+    &__title {
+      width: 560px;
+    }
+    &__brand {
+      color: variables.$color-secondary;
+      font-size: 14px;
+      span:first-child {
+        margin-right: 16px;
+      }
+    }
+    &__prodName {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 36px;
+      margin: 8px 0;
+      @include mixin.textOverMulti($c: 3);
+    }
+    &__saleTag {
+      @include mixin.flex(normal, center);
+      li {
+        font-weight: 500;
+        margin-right: 8px;
+      }
+    }
+    &__saleTagText {
+      display: block;
+      font-size: 12px;
+      border-radius: 16px;
+      padding: 7px 12px;
+      background: rgba(1, 47, 73, 0.1);
+      color: variables.$color-tertiary;
+    }
+    &__tagBar {
+      @include mixin.flex(space-between, center);
+    }
+    //Price
+    &__price {
+      margin-top: 10px;
+      width: 560px;
+      position: relative;
+      background: url('@assets/images/logo/logo_24h--bg.svg') right bottom no-repeat,
+        variables.$gray-lightest;
+      border-radius: 8px;
+      overflow: hidden;
+      &--preset {
+        .c-prodBriefing {
+          &__priceBody {
+            padding: 17px;
+          }
+        }
+      }
+      &--awardSale {
+        .c-prodBriefing {
+          &__priceHead {
+            background: linear-gradient(270deg, #4e4e4e 0%, #171717 100%);
+            color: variables.$color-white;
+          }
+          &__priceTitleTime {
+            span {
+              color: variables.$font-color;
+            }
+          }
+          &__priceBody {
+            padding: 17px;
+          }
+        }
+      }
+      &--crazySale {
+        .c-prodBriefing {
+          &__priceHead {
+            background: linear-gradient(
+              270deg,
+              variables.$color-primary--400 0%,
+              variables.$color-primary 100%
+            );
+            color: variables.$color-white;
+          }
+          &__priceTitleTime {
+            span {
+              color: variables.$color-primary;
+            }
+          }
+          &__priceBody {
+            padding: 17px;
+          }
+        }
+      }
+      &--bidding {
+        .c-prodBriefing {
+          &__priceHead {
+            background: linear-gradient(270deg, #4e4e4e 0%, #171717 100%);
+            color: variables.$color-white;
+          }
+          &__priceTitleTime {
+            span {
+              color: variables.$font-color;
+            }
+          }
+        }
+      }
+      &--isPriceTask {
+        .c-prodBriefing {
+          &__priceHead {
+            padding: 0;
+            background: variables.$font-color;
+            justify-content: flex-start;
+            .o-colorTag--text {
+              height: 30px;
+              background: variables.$color-primary--400;
+            }
+            .o-colorTag {
+              &__icon {
+                padding: 4px 10px 4px 16px;
+                box-shadow: none;
+                background: linear-gradient(
+                  270deg,
+                  variables.$color-primary 0%,
+                  variables.$color-primary--400 100%
+                );
+              }
+              &__text {
+                font-weight: 700;
+                font-size: 14px;
+                text-shadow: none;
+                transform: skew(13deg);
+              }
+              &::after {
+                background: variables.$color-primary;
+                box-shadow: none;
+              }
+            }
+          }
+          &__priceBody {
+            padding: 17px;
+          }
+          &__priceTitleText {
+            color: variables.$color-white;
+            font-weight: 400;
+            margin-left: 16px;
+          }
+        }
+      }
+    }
+    &__priceHead {
+      @include mixin.flex(space-between, center);
+      padding: 9px 16px;
+    }
+    &__priceTitle {
+      @include mixin.flex(normal, center);
+    }
+    &__priceTitleImg {
+      margin-top: -2px;
+      .ico_crazySale {
+        width: 13px;
+        margin: 0 7px;
+      }
+    }
+    &__priceTitleInfo {
+      font-weight: 700;
+      font-size: 18px;
+      margin-left: 7px;
+    }
+    &__priceTitleText {
+      font-weight: 500;
+      font-size: 14px;
+    }
+    &__priceTitleContent {
+      @include mixin.flex(normal, center);
+    }
+    &__priceTitleTime {
+      display: inline-block;
+      margin: 0 4px;
+      span {
+        width: 28px;
+        height: 24px;
+        background: variables.$color-white;
+        border-radius: 4px;
+        display: inline-block;
+        font-style: italic;
+        font-weight: 700;
+        padding: 2px 5px;
+        margin: 0px 4px;
+        vertical-align: middle;
+      }
+    }
+    &__primeTitle {
+      height: 20px;
+      img {
+        vertical-align: initial;
+      }
+    }
+    &__priceBody {
+      padding: 8px 17px;
+      @include mixin.flex(space-between, center);
+    }
+    &__priceGroup {
+      display: flex;
+    }
+  }
+}
